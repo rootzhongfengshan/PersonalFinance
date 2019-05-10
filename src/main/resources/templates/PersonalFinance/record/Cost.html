@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="layout/userview :: htmlhead(title='个人财务管理系统首页')"></head>
+<body class="am-with-topbar-fixed-top am-scrollable-vertical">
+
+<div th:replace="layout/userview :: header"></div>
+<div class="am-cf userview-main">
+    <div th:replace="layout/userview :: sidebar"></div>
+    <div class="userview-content">
+
+
+
+<div class="am-tabs am-g am-g-fixed am-animation-fade myfromtable" data-am-tabs>
+    <ul class="am-tabs-nav am-nav am-nav-tabs">
+        <li><a href="#tab1">消费金额录入</a></li>
+    </ul>
+
+
+    <div class="am-tabs-bd">
+        <div class="am-tab-panel am-fade" id="tab1">
+            <div class="addfrom am-g am-g-fixed am-animation-fade">
+                <form class="am-form am-form-horizontal" th:action="@{/PersonalFinance/saveCost}">
+
+                    <div class="am-form-group ">
+                        <label for="consume_date" class="am-u-sm-3 am-form-label">consume_date</label>
+                        <div class="am-u-sm-9 am-radio">
+                            <input type="text" class="am-form-field" id="consume_date" placeholder="请选择日期" data-am-datepicker readonly required name="consume_date" />
+                        </div>
+                    </div>
+
+
+                    <div class="am-form-group ">
+                        <label for="consume_name" class="am-u-sm-3 am-form-label">consume_name</label>
+                        <div class="am-u-sm-9 am-radio">
+                            <input type="text" id="consume_name" name="consume_name" placeholder="consume_name">
+                        </div>
+                    </div>
+
+                    <div class="am-form-group">
+                        <label for="project_fee" class="am-u-sm-3 am-form-label">project_fee</label>
+                        <div class="am-u-sm-9 am-radio">
+                            <input type="text" id="project_fee" name="project_fee" placeholder="">
+
+                        </div>
+                    </div>
+
+                    <div class="am-form-group">
+                        <label for="consume_fee" class="am-u-sm-3 am-form-label">consume_fee</label>
+                        <div class="am-u-sm-9 am-radio">
+                            <input type="text" id="consume_fee" name="consume_fee" placeholder="">
+
+                        </div>
+                    </div>
+
+
+                    <div class="am-form-group ">
+                        <label for="consume_type" class="am-u-sm-3 am-form-label">consume_type</label>
+                        <div class="am-u-sm-9 am-radio">
+                            <input type="text" id="consume_type" name="consume_type" placeholder="consume_type">
+                        </div>
+                    </div>
+
+                    <div class="am-form-group ">
+                        <label for="consume_category" class="am-u-sm-3 am-form-label">consume_category</label>
+                        <div class="am-u-sm-9 am-radio">
+                            <input type="text" id="consume_category" name="consume_category" placeholder="consume_category">
+                        </div>
+                    </div>
+
+                    <div class="am-form-group ">
+                        <label for="pay_way" class="am-u-sm-3 am-form-label">pay_way</label>
+                        <div class="am-u-sm-9 am-radio">
+                            <input type="text" id="pay_way" name="pay_way" placeholder="pay_way">
+                        </div>
+                    </div>
+
+                    <div class="am-form-group ">
+                        <label for="remarks" class="am-u-sm-3 am-form-label">remarks</label>
+                        <div class="am-u-sm-9 am-radio">
+                            <input type="text" id="remarkss" name="remarks" placeholder="remarks">
+                        </div>
+                    </div>
+
+                    <div class="am-form-group">
+                        <div class="am-u-sm-9 am-u-sm-push-3">
+                            <button type="submit" class="am-btn am-btn-primary">提交记录</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+</div>
+</div>
+        <div th:replace="layout/layout :: footer"></div>
+    </div>
+
+
+</div>
+
+    <!-- home.js -->
+    <script th:src="@{/amazeui/assets/js/home.js}"></script>
+    <div th:replace="layout/layout :: footer"></div>
+
+
+</body>
+</html>

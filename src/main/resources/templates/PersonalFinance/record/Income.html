@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="layout/userview :: htmlhead(title='个人财务管理系统首页')"></head>
+<body class="am-with-topbar-fixed-top am-scrollable-vertical">
+<div th:replace="layout/userview :: header"></div>
+<div class="am-cf userview-main">
+    <div th:replace="layout/userview :: sidebar"></div>
+    <div class="userview-content">
+
+<div class="am-tabs am-g am-g-fixed am-animation-fade myfromtable" data-am-tabs>
+    <ul class="am-tabs-nav am-nav am-nav-tabs">
+        <li><a href="#tab1">添加收款信息</a></li>
+    </ul>
+    <div class="am-tabs-bd">
+    <div class="am-tab-panel am-fade" id="tab1">
+        <div class="index am-g am-g-fixed am-animation-fade">
+            <form class="am-form am-form-horizontal" th:action="@{/PersonalFinance/saveIncome}">
+
+                <div class="am-form-group ">
+                    <label for="months" class="am-u-sm-3 am-form-label">月份 / months</label>
+                    <div class="am-u-sm-9 am-radio">
+                        <input type="text" id="months" name="months" placeholder="月份">
+                    </div>
+                </div>
+                <div class="am-form-group ">
+                    <label for="detail" class="am-u-sm-3 am-form-label">收款细节类别 / detail</label>
+                    <div class="am-u-sm-9 am-radio">
+                        <input type="text" id="detail" name="detail" placeholder="detail">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label for="rec_amount" class="am-u-sm-3 am-form-label">收款金额 / rec_amount</label>
+                    <div class="am-u-sm-9 am-radio">
+                        <input type="text" id="rec_amount" name="rec_amount" placeholder="">
+
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label for="rec_date" class="am-u-sm-2 am-form-label">rec_date</label>
+                    <div class="am-u-sm-9 am-radio">
+                        <input type="text" class="am-form-field" id="rec_date" placeholder="请选择日期" data-am-datepicker readonly required name="rec_date" />
+
+                    </div>
+                </div>
+
+                <div class="am-form-group ">
+                    <label for="remarks" class="am-u-sm-3 am-form-label">remarks / remarks</label>
+                    <div class="am-u-sm-9 am-radio">
+                        <input type="text" id="remarks" name="remarks" placeholder="remarks">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <div class="am-u-sm-9 am-u-sm-push-3">
+                        <button type="submit" class="am-btn am-btn-primary">提交记录</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+       
+
+
+</div>
+</div>
+        <div th:replace="layout/layout :: footer"></div>
+    </div>
+
+
+</div>
+
+
+    <!-- home.js -->
+    <script th:src="@{/amazeui/assets/js/home.js}"></script>
+    <div th:replace="layout/layout :: footer"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="layout/userview :: htmlhead(title='个人财务管理系统首页')"></head>
+<body class="am-with-topbar-fixed-top am-scrollable-vertical">
+<div th:replace="layout/userview :: header"></div>
+
+<div class="am-cf userview-main">
+    <div th:replace="layout/userview :: sidebar"></div>
+    <div class="userview-content">
+
+        <div class="userview-content-body">
+            <div class="am-cf am-padding am-padding-bottom-0">
+                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">消费数据信息查询</strong> </div>
+            </div>
+            <hr>
+
+            <div class="am-g">
+                <div class="am-u-sm-12">
+                    <table class="am-table am-table-bd am-table-striped userview-content-table">
+                        <thead>
+                        <tr>
+                            <th>consume_date</th>
+                            <th>consume_name</th>
+                            <th>project_fee</th>
+                            <th>consume_fee</th>
+                            <th>consume_type</th>
+                            <th>consume_category</th>
+                            <th>pay_way</th>
+                            <th>remarks</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="Cost : ${list}">
+                            <td th:text="${#calendars.format(Income.consume_date,'yyyy-MM-dd')}"></td>
+                            <td th:text="${Cost.consume_name}"></td>
+                            <td th:text="${Cost.project_fee}"></td>
+                            <td th:text="${Cost.consume_fee}"></td>
+                            <td th:text="${Cost.consume_type}"></td>
+                            <td th:text="${Cost.consume_category}"></td>
+                            <td th:text="${#calendars.format(Income.rec_date,'yyyy-MM-dd')}"></td>
+                            <td th:text="${Cost.pay_way}"></td>
+                            <td th:text="${Cost.remarks}"></td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- footer-->
+        <div th:replace="layout/adminLayout :: footer"></div>
+    </div>
+
+
+</div>
+<!-- content end -->
+
+
+
+
+
+</body>
+</html>

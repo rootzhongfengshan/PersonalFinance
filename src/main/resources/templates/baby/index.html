@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head th:replace="layout/userview :: htmlhead(title='个人财务管理系统首页')"></head>
+
+<body class="am-with-topbar-fixed-top am-scrollable-vertical">
+
+<div th:replace="layout/userview :: header"></div>
+
+<div class="am-cf userview-main">
+    <div th:replace="layout/userview :: sidebar"></div>
+
+    <div class="userview-content">
+    <div class="am-tabs am-g am-g-fixed am-animation-fade myfromtable" data-am-tabs>
+        <ul class="am-tabs-nav am-nav am-nav-tabs">
+            <li><a href="#tab1">添加收款信息</a></li>
+            <li><a href="#tab2">各账户资产情况统计</a></li>
+            <li><a href="#tab3">消费金额录入</a></li>
+        </ul>
+
+
+        <div class="am-tabs-bd">
+            <div class="am-tab-panel am-fade" id="tab1">
+                <div class="index am-g am-g-fixed am-animation-fade">
+                    <form class="am-form am-form-horizontal" th:action="@{/PersonalFinance/saveIncome}">
+
+                        <div class="am-form-group ">
+                            <label for="months" class="am-u-sm-3 am-form-label">月份 / months</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="months" name="months" placeholder="月份">
+                            </div>
+                        </div>
+                        <div class="am-form-group ">
+                            <label for="detail" class="am-u-sm-3 am-form-label">收款细节类别 / detail</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="detail" name="detail" placeholder="detail">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="rec_amount" class="am-u-sm-3 am-form-label">收款金额 / rec_amount</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="rec_amount" name="rec_amount" placeholder="">
+
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="rec_date" class="am-u-sm-2 am-form-label">rec_date</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" class="am-form-field" id="rec_date" placeholder="请选择日期" data-am-datepicker readonly required name="rec_date" />
+
+                            </div>
+                        </div>
+
+                        <div class="am-form-group ">
+                            <label for="remarks" class="am-u-sm-3 am-form-label">remarks / remarks</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="remarks" name="remarks" placeholder="remarks">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <div class="am-u-sm-9 am-u-sm-push-3">
+                                <button type="submit" class="am-btn am-btn-primary">提交记录</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="am-tab-panel am-fade" id="tab2">
+                <div class="addfrom am-g am-g-fixed am-animation-fade">
+                    <form class="am-form am-form-horizontal" th:action="@{/PersonalFinance/saveProperty}">
+
+                        <div class="am-form-group ">
+                            <label for="record_date" class="am-u-sm-3 am-form-label">consume_date</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" class="am-form-field" id="record_date" placeholder="请选择日期" data-am-datepicker readonly required name="record_date" />
+                            </div>
+                        </div>
+
+
+                        <div class="am-form-group">
+                            <label for="wechat1" class="am-u-sm-3 am-form-label">wechat1</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="wechat1" name="wechat1" placeholder="wechat1">
+
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="wechat2" class="am-u-sm-3 am-form-label">wechat2</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="wechat2" name="wechat2" placeholder="wechat2">
+
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="alipay1" class="am-u-sm-3 am-form-label">alipay1</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="alipay1" name="alipay1" placeholder="alipay1">
+
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="alipay2" class="am-u-sm-3 am-form-label">alipay2</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="alipay2" name="alipay2" placeholder="alipay2">
+
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="zhaoshang" class="am-u-sm-3 am-form-label">zhaoshang</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="zhaoshang" name="zhaoshang" placeholder="zhaoshang">
+
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="jiaotong" class="am-u-sm-3 am-form-label">jiaotong</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="jiaotong" name="jiaotong" placeholder="jiaotong">
+
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="jianshe" class="am-u-sm-3 am-form-label">jianshe</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="jianshe" name="jianshe" placeholder="jianshe">
+
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="beijing" class="am-u-sm-3 am-form-label">beijing</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="beijing" name="beijing" placeholder="beijing">
+
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="maomingyouzheng" class="am-u-sm-3 am-form-label">maomingyouzheng</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="maomingyouzheng" name="maomingyouzheng" placeholder="maomingyouzheng">
+
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="beijingyouzheng" class="am-u-sm-3 am-form-label">beijingyouzheng</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="beijingyouzheng	" name="beijingyouzheng" placeholder="beijingyouzheng">
+
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="gongshang" class="am-u-sm-3 am-form-label">gongshang</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="gongshang" name="gongshang" placeholder="gongshang">
+
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="am-form-group ">
+                            <label for="remarks" class="am-u-sm-3 am-form-label">remarks</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="remarksss" name="remarks" placeholder="remarks">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <div class="am-u-sm-9 am-u-sm-push-3">
+                                <button type="submit" class="am-btn am-btn-primary">提交记录</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="am-tab-panel am-fade" id="tab3">
+                <div class="addfrom am-g am-g-fixed am-animation-fade">
+                    <form class="am-form am-form-horizontal" th:action="@{/PersonalFinance/saveCost}">
+
+                        <div class="am-form-group ">
+                            <label for="consume_date" class="am-u-sm-3 am-form-label">consume_date</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" class="am-form-field" id="consume_date" placeholder="请选择日期" data-am-datepicker readonly required name="consume_date" />
+                            </div>
+                        </div>
+
+
+                        <div class="am-form-group ">
+                            <label for="consume_name" class="am-u-sm-3 am-form-label">consume_name</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="consume_name" name="consume_name" placeholder="consume_name">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="project_fee" class="am-u-sm-3 am-form-label">project_fee</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="project_fee" name="project_fee" placeholder="">
+
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="consume_fee" class="am-u-sm-3 am-form-label">consume_fee</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="consume_fee" name="consume_fee" placeholder="">
+
+                            </div>
+                        </div>
+
+
+                        <div class="am-form-group ">
+                            <label for="consume_type" class="am-u-sm-3 am-form-label">consume_type</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="consume_type" name="consume_type" placeholder="consume_type">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group ">
+                            <label for="consume_category" class="am-u-sm-3 am-form-label">consume_category</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="consume_category" name="consume_category" placeholder="consume_category">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group ">
+                            <label for="pay_way" class="am-u-sm-3 am-form-label">pay_way</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="pay_way" name="pay_way" placeholder="pay_way">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group ">
+                            <label for="remarks" class="am-u-sm-3 am-form-label">remarks</label>
+                            <div class="am-u-sm-9 am-radio">
+                                <input type="text" id="remarkss" name="remarks" placeholder="remarks">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <div class="am-u-sm-9 am-u-sm-push-3">
+                                <button type="submit" class="am-btn am-btn-primary">提交记录</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+        <div th:replace="layout/layout :: footer"></div>
+    </div>
+
+
+</div>
+
+
+    <!-- home.js -->
+    <script th:src="@{/amazeui/assets/js/home.js}"></script>
+
+
+
+</body>
+</html>

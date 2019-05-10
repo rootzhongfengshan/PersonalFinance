@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="layout/layout :: htmlhead(title='Baby Log 首页')">
+    <!-- CSS 部分 -->
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" th:href="@{/bootstrap/dist/css/bootstrap.min.css}">
+    <!-- Bootstrap table -->
+    <link rel="stylesheet" th:href="@{/bootstrap-table/dist/css/bootstrap-table.min.css}">
+</head>
+<body class="am-with-topbar-fixed-top am-scrollable-vertical">
+
+<div th:replace="layout/layout :: header"></div>
+
+<div class="sidebar-collapse">
+    <ul class="nav metismenu" id="side-menu">
+
+
+        <li>
+            <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">财务各项录入</span><span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level collapse" style="display: block;">
+                <li id="saveIncome"><a th:href="@{/PersonalFinance/saveIncome_0_0_0}">添加收款信息</a></li>
+                <li id="saveProperty"><a th:href="@{/PersonalFinance/saveProperty_0_0_0}">各账户资产情况统计</a></li>
+                <li id="saveCost"><a th:href="@{/PersonalFinance/saveCost_0_0_0}">消费金额录入</a></li>
+                <li id="savePropertytable"><a th:href="@{/PersonalFinance/savetable_0_0_0}">各账户资产情况统计table</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</div>
+
+
+<div class="am-tabs-bd">
+<table id="table">
+
+</table>
+</div>
+
+
+<!-- home.js -->
+<script th:src="@{/amazeui/assets/js/home.js}"></script>
+<!-- JS 部分 -->
+<!-- jQuery 3 -->
+<script th:src="@{/jquery/dist/jquery.min.js}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script th:src="@{/bootstrap/dist/js/bootstrap.min.js}"></script>
+<!-- bootstrap-table -->
+<script th:src="@{/bootstrap-table/dist/bootstrap-table.js}"></script>
+<script th:src="@{/bootstrap-table/dist/locale/bootstrap-table-zh-CN.js}"></script>
+<div th:replace="layout/layout :: footer"></div>
+<script type="text/javascript">
+    $('#table').bootstrapTable({
+        columns: [{
+            field: 'id',
+            title: 'Item ID'
+        }, {
+            field: 'name',
+            title: 'Item Name'
+        }, {
+            field: 'price',
+            title: 'Item Price'
+        }],
+        data: [{
+            id: 1,
+            name: 'Item 1',
+            price: '$1'
+        }, {
+            id: 2,
+            name: 'Item 2',
+            price: '$2'
+        }]
+    });
+    table.bootstrapTable('hideLoading');
+</script>
+
+</body>
+</html>

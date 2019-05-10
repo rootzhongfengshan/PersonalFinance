@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="layout/layout :: htmlhead(title='Baby Log 首页')"></head>
+<body class="am-with-topbar-fixed-top am-scrollable-vertical">
+
+<div th:replace="layout/layout :: header"></div>
+
+<div class="am-tabs am-g am-g-fixed am-animation-fade myfromtable" data-am-tabs>
+    <ul class="am-tabs-nav am-nav am-nav-tabs">
+        <li><a href="#tab1">收入报告</a></li>
+        <li><a href="#tab2">期初期末余额统计分析</a></li>
+        <li><a href="#tab3">消费记录详细报告</a></li>
+        <li><a href="#tab4">一键分析</a></li>
+    </ul>
+
+    <div class="am-tabs-bd">
+    <div class="am-tab-panel am-fade" id="tab1">
+        <div class="index am-g am-g-fixed am-animation-fade">
+            <form class="am-form am-form-horizontal" th:action="@{/PersonalFinance/analyseIncome}">
+                <div class="am-form-group ">
+                    <label for="start_date" class="am-u-sm-3 am-form-label">start_date</label>
+                    <div class="am-u-sm-9 am-radio">
+                        <input type="text" class="am-form-field" id="start_date" placeholder="请选择日期" data-am-datepicker readonly required name="start_date" />
+                    </div>
+                </div>
+                <div class="am-form-group ">
+                    <label for="end_date" class="am-u-sm-3 am-form-label">end_date</label>
+                    <div class="am-u-sm-9 am-radio">
+                        <input type="text" class="am-form-field" id="end_date" placeholder="请选择日期" data-am-datepicker readonly required name="end_date" />
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <div class="am-u-sm-9 am-u-sm-push-3">
+                        <button type="submit" class="am-btn am-btn-primary">收入报告统计分析</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+        <div class="am-tab-panel am-fade" id="tab2">
+            <div class="addfrom am-g am-g-fixed am-animation-fade">
+                <form class="am-form am-form-horizontal" th:action="@{/PersonalFinance/analyseProperty}">
+                    <div class="am-form-group ">
+                        <label for="start_date" class="am-u-sm-3 am-form-label">start_date</label>
+                        <div class="am-u-sm-9 am-radio">
+                            <input type="text" class="am-form-field" id="start_date2" placeholder="请选择日期" data-am-datepicker readonly required name="start_date" />
+                        </div>
+                    </div>
+                    <div class="am-form-group ">
+                        <label for="end_date" class="am-u-sm-3 am-form-label">end_date</label>
+                        <div class="am-u-sm-9 am-radio">
+                            <input type="text" class="am-form-field" id="end_date2" placeholder="请选择日期" data-am-datepicker readonly required name="end_date" />
+                        </div>
+                    </div>
+
+                    <div class="am-form-group">
+                        <div class="am-u-sm-9 am-u-sm-push-3">
+                            <button type="submit" class="am-btn am-btn-primary">期初期末余额统计分析</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="am-tab-panel am-fade" id="tab3">
+            <div class="addfrom am-g am-g-fixed am-animation-fade">
+                <form class="am-form am-form-horizontal" th:action="@{/PersonalFinance/analyseCost}">
+                    <div class="am-form-group ">
+                        <label for="start_date" class="am-u-sm-3 am-form-label">start_date</label>
+                        <div class="am-u-sm-9 am-radio">
+                            <input type="text" class="am-form-field" id="start_date3" placeholder="请选择日期" data-am-datepicker readonly required name="start_date" />
+                        </div>
+                    </div>
+                    <div class="am-form-group ">
+                        <label for="end_date" class="am-u-sm-3 am-form-label">end_date</label>
+                        <div class="am-u-sm-9 am-radio">
+                            <input type="text" class="am-form-field" id="end_date3" placeholder="请选择日期" data-am-datepicker readonly required name="end_date" />
+                        </div>
+                    </div>
+
+                    <div class="am-form-group">
+                        <div class="am-u-sm-9 am-u-sm-push-3">
+                            <button type="submit" class="am-btn am-btn-primary">消费记录详细报告</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="am-tab-panel am-fade" id="tab4">
+            <div class="addfrom am-g am-g-fixed am-animation-fade">
+                <form class="am-form am-form-horizontal" th:action="@{/PersonalFinance/analyseall}">
+                    <div class="am-form-group ">
+                        <label for="start_date" class="am-u-sm-3 am-form-label">start_date</label>
+                        <div class="am-u-sm-9 am-radio">
+                            <input type="text" class="am-form-field" id="start_date4" placeholder="请选择日期" data-am-datepicker showDefault="true" readonly required name="start_date" />
+                        </div>
+                    </div>
+                    <div class="am-form-group ">
+                        <label for="end_date" class="am-u-sm-3 am-form-label">end_date</label>
+                        <div class="am-u-sm-9 am-radio">
+                            <input type="text" class="am-form-field" id="end_date4" placeholder="请选择日期" data-am-datepicker showDefault="true" readonly="false" required name="end_date" />
+                        </div>
+                    </div>
+
+                    <div class="am-form-group">
+                        <div class="am-u-sm-9 am-u-sm-push-3">
+                            <button type="submit" class="am-btn am-btn-primary">个人财务分析报告</button>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+
+
+</div>
+</div>
+
+
+    <!-- home.js -->
+    <script th:src="@{/amazeui/assets/js/home.js}"></script>
+    <div th:replace="layout/layout :: footer"></div>
+
+
+</body>
+</html>
