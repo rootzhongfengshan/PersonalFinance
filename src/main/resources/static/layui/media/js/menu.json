@@ -1,0 +1,16 @@
+{
+  "items":[
+    {"MENU_ID":"001","MENU_NAME":"信息维护","MENU_LEVEL":"二级","MENU_URL":"www.184.com","PARENT_MENU_ID":"010","VALID_TAG":"有效","SHOW_ORDER":"派逊"},
+    {"MENU_ID":"002","MENU_NAME":"信息维护","MENU_LEVEL":"二级","MENU_URL":"www.184.com","PARENT_MENU_ID":"010","VALID_TAG":"有效","SHOW_ORDER":"派逊"},
+    {"MENU_ID":"001","MENU_NAME":"信息维护","MENU_LEVEL":"二级","MENU_URL":"www.184.com","PARENT_MENU_ID":"010","VALID_TAG":"有效","SHOW_ORDER":"派逊"},
+    {"MENU_ID":"001","MENU_NAME":"信息维护","MENU_LEVEL":"二级","MENU_URL":"www.184.com","PARENT_MENU_ID":"010","VALID_TAG":"有效","SHOW_ORDER":"派逊"},
+    {"MENU_ID":"001","MENU_NAME":"信息维护","MENU_LEVEL":"二级","MENU_URL":"www.184.com","PARENT_MENU_ID":"010","VALID_TAG":"有效","SHOW_ORDER":"派逊"},
+    {"MENU_ID":"001","MENU_NAME":"信息维护","MENU_LEVEL":"二级","MENU_URL":"www.184.com","PARENT_MENU_ID":"010","VALID_TAG":"有效","SHOW_ORDER":"派逊"},
+    {"MENU_ID":"001","MENU_NAME":"信息维护","MENU_LEVEL":"二级","MENU_URL":"www.184.com","PARENT_MENU_ID":"010","VALID_TAG":"有效","SHOW_ORDER":"派逊"},
+    {"MENU_ID":"001","MENU_NAME":"信息维护","MENU_LEVEL":"二级","MENU_URL":"www.184.com","PARENT_MENU_ID":"010","VALID_TAG":"有效","SHOW_ORDER":"派逊"},
+    {"MENU_ID":"001","MENU_NAME":"信息维护","MENU_LEVEL":"二级","MENU_URL":"www.184.com","PARENT_MENU_ID":"010","VALID_TAG":"有效","SHOW_ORDER":"派逊"},
+    {"MENU_ID":"001","MENU_NAME":"信息维护","MENU_LEVEL":"二级","MENU_URL":"www.184.com","PARENT_MENU_ID":"010","VALID_TAG":"有效","SHOW_ORDER":"派逊"}
+  ],
+  "totalRows":36,
+  "page":{}
+}

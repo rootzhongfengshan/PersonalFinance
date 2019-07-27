@@ -105,7 +105,7 @@ ul {
 .userview-content,
 .userview-sidebar {
   height: 100%;
-  overflow-x: hidden;
+  overflow-x: scroll;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }

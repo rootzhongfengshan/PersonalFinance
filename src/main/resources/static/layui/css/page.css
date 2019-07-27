@@ -1,0 +1,115 @@
+/******mos---layout******/
+a{user-select: none;}
+.clearfix:before,.clearfix:after{ content:"";  display:table; }
+.clearfix:after{clear:both;}
+.clearfix{ *zoom:1;}
+.fl{float: left}
+.fr{float: right}
+em,i{ font-style: normal}
+body{ overflow-x: hidden; min-width: 800px;}
+/*##############  layer 弹框   ################*/
+body .layer-ext-moon .layui-layer-btn .layui-layer-btn0{background: #38C544;  border-radius: 4px; border: 1px solid #38C544;}
+body .layer-skin-news .layui-layer-title{ background: #fff; height:40px; line-height:40px;box-sizing: border-box; padding:0;}
+body .layer-skin-news .layui-layer-title span{ padding-left:10px; border-left: 4px solid #ff9f00; margin-left: 10px;}
+body .layer-skin-news .layui-layer-btn{padding: 8px 10px; border-top: 1px solid #eee; text-align: center}
+body .layer-skin-news .layui-layer-btn .layui-layer-btn0{background: #38C544;  border-radius: 4px; border: 1px solid #38C544;}
+body .layer-skin-news .layui-layer-btn .layui-layer-btn1{ background: #fff; border: 1px solid #d9d9d9; border-radius: 4px;}
+body .layer-skin-news .layui-form-item{ margin-bottom: 0;}
+body .layer-skin-news .layui-form-select dl{ max-height: 164px;}
+.layui-form-item-110 .layui-form-label{ width: 100px;}
+.layui-form-item-110 .layui-input-block{ margin-left: 110px;}
+
+body .layer-skin-btn .layui-layer-btn .layui-layer-btn0{background: #38C544;  border-radius: 4px; border: 1px solid #38C544;}
+body .layer-skin-cnt .layui-layer-content{ padding: 0; overflow-y: hidden}
+body .layer-skin-cnt .layui-layer-btn .layui-layer-btn0{ background: #fff; color: #666; border: 1px solid #d9d9d9; border-radius: 4px;}
+body .layer-skin-mt10 .layui-layer-content{padding: 10px;}
+body .layer-skin-xw .layui-layer-content .layui-layer-ico{  position: absolute;  top: 20px;  left: 50%;  margin-left: -15px; width: 30px;  height: 30px;}
+body .layer-skin-news.layer-skin-xw .layui-layer-padding { text-align: center; padding: 70px 20px 0;}
+body .layer-skin-news.layer-skin-xw .layui-layer-content{ height: 190px;}
+.layui-layer-tips .layui-layer-content{ height: auto;   word-break: break-all;}
+body .layui-layer-page-hidden .layui-layer-content,.body .layer-skin-table-01 .layui-layer-content{ overflow: hidden !important;}
+body .layer-skin-table-01 .layui-layer-content .layer-sp-wrap{ padding: 15px 15px 0 15px;}
+body .layer-skin-table-01 .layui-layer-content .table{ border: 1px solid #dcdcdc;}
+.layui-form-vg .layui-form-label{display: block; float: none; text-align: left; padding-left: 0;    font-size: 12px;  color: #7B93A7; }
+.layui-form-vg .layui-inline{ margin-right: 0; font-size: 12px;}
+.query-wrap .layui-form-vg .layui-inline{vertical-align:top;}
+.edit-wrap,.query-wrap,.chose-oepart-wrap,.modify-psd-wrap,.chose-bm-wrapper{display: none;padding: 15px; }
+.req-em{ font-weight: normal; color: red; padding-right: 5px;}
+.p-info{ font-size: 12px; color: #666;}
+.add-set-wrap .layui-btn-diy{ width: 70px; height: 30px;padding: 0; float: left}
+.add-set-wrap .layui-btn-diy p{ height: 28px; margin: 1px; background: #fff;color: #666}
+.add-set-wrap .layui-btn-diy p:hover{ background: none; color: #fff;}
+.add-set-wrap{ margin-bottom: 15px;}
+.add-set-wrap .num{ float: left; margin-left: 20px; line-height: 30px; font-size: 12px; color: #666;}
+body .layer-skin-news .modify-psd-wrap .layui-form-item{ margin: 15px auto;}
+
+
+.sun-pageTop-wrapper{ padding: 10px 15px; background: #fff; border-bottom: 15px solid #f1f4f7;}
+.sun-pageTop-wrapper.bd0{border-bottom: none;}
+.sun-title{ padding-bottom: 10px; border-bottom: 1px dashed #dcdcdc; margin-bottom: 10px; position: relative}
+.sun-title .result-btn{ position: absolute; top: -9px; right: 0;}
+.sun-title em{ padding-left: 12px; border-left:5px solid #fd8f25;font-size: 16px;  color: #565656;}
+.layui-form-label{    font-size: 12px;  color: #787878;    padding: 4px 5px;  width: 70px;}
+.layui-input-block{    margin-left: 90px;  min-height: 30px;}
+.layui-input, .layui-select, .layui-textarea{ height: 30px; line-height: 30px; font-size: 12px;}
+.layui-form-radio i:hover, .layui-form-radioed i{color: #ff9f00;}
+.layui-form-radio i{ font-size: 18px;}
+.layui-form-checkbox[lay-skin=primary]:hover i{ border-color: #ff9f00;}
+.layui-form-checked[lay-skin=primary] i{color: #fff;     border-color: #ff9f00;
+    background-color: #ff9f00;}
+.layui-form-radio span{ font-size: 12px;}
+.layui-form-radio{ line-height: 30px; margin: 0;}
+.layui-input-block_right{ text-align: right}
+.layui-input-block_right .layui-btn-primary:hover{    border-color: #999;color: #222;}
+.result-title{border-bottom: 1px solid #eaf0f2; margin: 0 15px 15px;}
+.result-title em{ font-size: 14px;  padding: 10px 0;color: #787878}
+.table-wrap{ padding:0 15px 15px;}
+.layui-table td, .layui-table th{ font-size: 12px;}
+.layui-form-select dl dd.layui-this{ background-color:#ff9f00}
+.layui-form-item .layui-inline{ margin-bottom: 10px;}
+.layui-table thead tr{ background: rgba(123,147,167,.1)  }
+table.dataTable thead th, table.dataTable tfoot th{ font-weight: 400;}
+.dataTables_wrapper.no-footer .dataTables_scrollBody,table.dataTable.no-footer{ border-bottom: none;}
+.layui-table{ margin: 0 0 0 0;}
+.layui-table th{color: #7B93A7; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; height: 20px;}
+.layui-table td{font-size: 12px;  color: #2D3E53;  }
+.dataTables_info{ clear:both; float: left; padding: 6px 0; font-size: 12px; margin-top: 10px;}
+.dataTables_paginate{ float: right; height: auto; margin-top: 10px;}
+.paginate_button,.ellipsis{ border: 1px solid #dcdcdc; display: inline-block; padding: 6px 10px; margin-left: -1px; font-size: 12px;
+    cursor: pointer;}
+.ellipsis{ padding: 6px 7px;}
+.paginate_button.current{ color: #7B93A7;background: rgba(123,147,167,.1) }
+.paginate_button:hover{color: #7B93A7;}
+.dataTables_scrollHead{background: rgba(123,147,167,.1)  }
+.set-a{color: #ffc464; margin-right: 15px;}
+.set-a:hover{color:#ffc464; }
+.layui-input-inline{ position: relative}
+.layui-icon-bm{ position: absolute; right: 10px; top: 0; line-height: 30px; font-size: 16px;}
+.layui-form-item .layui-inline-city .layui-input-inline{ margin-right: 14px;}
+.start{ color: #fff;}
+.layui-requied .start{ color: red;}
+.chose-oepart-wrap .layui-form-vg .layui-form-label{ width: 130px;}
+.kuang-table{ border-top: 10px solid #f2f2f2; margin:15px -15px 0; padding:10px 15px 0;}
+.bm-btn{ cursor: pointer}
+.kuang-table .layui-form-radio{ line-height: 20px;}
+.modify-psd-wrap .layui-form-label{color: #7B93A7; }
+.result-btn .layui-form-item{ margin: 5px auto;}
+.result-btn .layui-btn{ position: relative}
+.file-opcty{ position: absolute; top: 0; right: 0; bottom:0; left: 0; opacity: 0;cursor:pointer}
+.result-btn .layui-upload-button{ padding: 0 3px; height: 30px; line-height: 30px; font-size: 12px;background-color: #F7B824; color: #fff; border-color: #F7B824; margin-right: 10px}
+.result-btn .layui-upload-icon{ margin: 0 5px;}
+.result-btn .layui-upload-button .layui-icon{ color: #fff;}
+.result-btn .layui-upload-icon i{ font-size: 12px; margin-right: 0;}
+.result-btn .layui-form-item{ margin-bottom: 0;}
+.layui-form-vg .layui-form-label{ width: 110px;}
+.layui-form-select dl dd, .layui-form-select dl dt{ font-size: 12px;}
+.remak-div{ margin-right: 37px;}
+.js-a-del{ color: #01AAED}
+.js-a-del:hover{color: #1E9FFF}
+.mar-top--20{ margin-top: -20px;}
+.wrapper-ts{ padding:15px; }
+.wrapper-ts .paginate_button,.wrapper-ts .ellipsis{ line-height: 14px;}
+.layui-tab-ts{ margin-top: -10px;}
+.layui-tab-ts .kuang-table{ margin: 15px -25px 0;}
+
+/*.mar-top--20 .kuang-table{ margin: 15px -25px 0; padding: 10px 25px 0}*/

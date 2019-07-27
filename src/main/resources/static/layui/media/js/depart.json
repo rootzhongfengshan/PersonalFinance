@@ -1,0 +1,22 @@
+{
+  "items":[
+    {"OEPART_ID":"1","OEPART_CODE":"001","DEPAIT_NAME":"汉中门营业厅","OEPRAT_FRAME":"部门串","AREA_CODE":"区域编码","VALID_TAG":"有效性标志","DEPART_ORI_NAME":"部门原名称","LONGITUDE":"东经30度","LATITUDE":"北纬31度","IS_ENTITY":"是"},
+    {"OEPART_ID":"1","OEPART_CODE":"002","DEPAIT_NAME":"汉中门营业厅","OEPRAT_FRAME":"部门串","AREA_CODE":"区域编码","VALID_TAG":"有效性标志","DEPART_ORI_NAME":"部门原名称","LONGITUDE":"东经30度","LATITUDE":"北纬31度","IS_ENTITY":"是"},
+    {"OEPART_ID":"1","OEPART_CODE":"003","DEPAIT_NAME":"汉中门营业厅","OEPRAT_FRAME":"部门串","AREA_CODE":"区域编码","VALID_TAG":"有效性标志","DEPART_ORI_NAME":"部门原名称","LONGITUDE":"东经30度","LATITUDE":"北纬31度","IS_ENTITY":"否"},
+    {"OEPART_ID":"1","OEPART_CODE":"004","DEPAIT_NAME":"汉中门营业厅","OEPRAT_FRAME":"部门串","AREA_CODE":"区域编码","VALID_TAG":"有效性标志","DEPART_ORI_NAME":"部门原名称","LONGITUDE":"东经30度","LATITUDE":"北纬31度","IS_ENTITY":"是"},
+    {"OEPART_ID":"1","OEPART_CODE":"005","DEPAIT_NAME":"汉中门营业厅","OEPRAT_FRAME":"部门串","AREA_CODE":"区域编码","VALID_TAG":"有效性标志","DEPART_ORI_NAME":"部门原名称","LONGITUDE":"东经30度","LATITUDE":"北纬31度","IS_ENTITY":"否"},
+    {"OEPART_ID":"1","OEPART_CODE":"006","DEPAIT_NAME":"汉中门营业厅","OEPRAT_FRAME":"部门串","AREA_CODE":"区域编码","VALID_TAG":"有效性标志","DEPART_ORI_NAME":"部门原名称","LONGITUDE":"东经30度","LATITUDE":"北纬31度","IS_ENTITY":"是"},
+    {"OEPART_ID":"1","OEPART_CODE":"007","DEPAIT_NAME":"汉中门营业厅","OEPRAT_FRAME":"部门串","AREA_CODE":"区域编码","VALID_TAG":"有效性标志","DEPART_ORI_NAME":"部门原名称","LONGITUDE":"东经30度","LATITUDE":"北纬31度","IS_ENTITY":"否"},
+    {"OEPART_ID":"1","OEPART_CODE":"008","DEPAIT_NAME":"汉中门营业厅","OEPRAT_FRAME":"部门串","AREA_CODE":"区域编码","VALID_TAG":"有效性标志","DEPART_ORI_NAME":"部门原名称","LONGITUDE":"东经30度","LATITUDE":"北纬31度","IS_ENTITY":"是"},
+    {"OEPART_ID":"1","OEPART_CODE":"009","DEPAIT_NAME":"汉中门营业厅","OEPRAT_FRAME":"部门串","AREA_CODE":"区域编码","VALID_TAG":"有效性标志","DEPART_ORI_NAME":"部门原名称","LONGITUDE":"东经30度","LATITUDE":"北纬31度","IS_ENTITY":"是"},
+    {"OEPART_ID":"1","OEPART_CODE":"010","DEPAIT_NAME":"汉中门营业厅","OEPRAT_FRAME":"部门串","AREA_CODE":"区域编码","VALID_TAG":"有效性标志","DEPART_ORI_NAME":"部门原名称","LONGITUDE":"东经30度","LATITUDE":"北纬31度","IS_ENTITY":"否"},
+    {"OEPART_ID":"1","OEPART_CODE":"006","DEPAIT_NAME":"汉中门营业厅","OEPRAT_FRAME":"部门串","AREA_CODE":"区域编码","VALID_TAG":"有效性标志","DEPART_ORI_NAME":"部门原名称","LONGITUDE":"东经30度","LATITUDE":"北纬31度","IS_ENTITY":"是"},
+    {"OEPART_ID":"1","OEPART_CODE":"007","DEPAIT_NAME":"汉中门营业厅","OEPRAT_FRAME":"部门串","AREA_CODE":"区域编码","VALID_TAG":"有效性标志","DEPART_ORI_NAME":"部门原名称","LONGITUDE":"东经30度","LATITUDE":"北纬31度","IS_ENTITY":"否"},
+    {"OEPART_ID":"1","OEPART_CODE":"008","DEPAIT_NAME":"汉中门营业厅","OEPRAT_FRAME":"部门串","AREA_CODE":"区域编码","VALID_TAG":"有效性标志","DEPART_ORI_NAME":"部门原名称","LONGITUDE":"东经30度","LATITUDE":"北纬31度","IS_ENTITY":"是"},
+    {"OEPART_ID":"1","OEPART_CODE":"009","DEPAIT_NAME":"汉中门营业厅","OEPRAT_FRAME":"部门串","AREA_CODE":"区域编码","VALID_TAG":"有效性标志","DEPART_ORI_NAME":"部门原名称","LONGITUDE":"东经30度","LATITUDE":"北纬31度","IS_ENTITY":"是"},
+    {"OEPART_ID":"1","OEPART_CODE":"010","DEPAIT_NAME":"汉中门营业厅","OEPRAT_FRAME":"部门串","AREA_CODE":"区域编码","VALID_TAG":"有效性标志","DEPART_ORI_NAME":"部门原名称","LONGITUDE":"东经30度","LATITUDE":"北纬31度","IS_ENTITY":"否"}
+
+  ],
+  "totalRows":106,
+  "page":{}
+}

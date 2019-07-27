@@ -1,0 +1,76 @@
+#配置数据源
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    #url: jdbc:mysql://47.104.108.36:3306/baby?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://94.191.22.215:3306/baby?useUnicode=true&characterEncoding=utf8
+    username: zhongfs
+    #password: zhongfs322
+    password: zhongfs_123
+  mail:
+    host: smtp.163.com
+    port: 465
+    username: a419914150@163.com
+    password: B8b322927
+    default-encoding: UTF-8
+
+
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    mode: HTML
+
+mail:
+  fromMail:
+    addr: a419914150@163.com
+
+server:
+  port: 9810
+
+
+
+###############################################
+#spring.thymeleaf.cache=false
+#spring.thymeleaf.mode=LEGACYHTML5
+
+#   thymeleaf 相关设置
+  #thymeleaf:
+    #prefix: classpath:/templates/
+    #cache: false
+#spring.thymeleaf.mode的默认值是HTML5，其实是一个很严格的检查，
+#改为LEGACYHTML5可以得到一个可能更友好亲切的格式要求。
+#LEGACYHTML5需要搭配一个额外的库NekoHTML才可用
+#		<dependency>
+#			<groupId>net.sourceforge.nekohtml</groupId>
+#			<artifactId>nekohtml</artifactId>
+#			<version>1.9.15</version>
+#		</dependency>
+ #   mode: LEGACYHTML5
+
+###############################################
+
+
+
+#开MYBATIS日志打印 修改level及包名级别为debug 设置日志保存目录
+logging:
+  level:
+    net.vv2.baby.mapper: DEBUG
+    net.vv2.PersonalFinance.mapper: DEBUG
+    org.apache.ibatis: DEBUG
+  file: var/log/myapp.log
+
+
+  ###############################################
+#  ---
+#  server:
+#    port: 8083
+#  spring:
+#    profiles: dev
+#
+#
+#  ---
+#
+#  server:
+#    port: 8084
+#  spring:
+#    profiles: prod  #指定属于哪个环境

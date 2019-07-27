@@ -32,11 +32,62 @@
                             <div class="am-u-sm-9 am-u-sm-push-3">
                                 <button type="submit" class="am-btn am-btn-primary">收款信息查询</button>
                             </div>
+
+
+                            <div class="am-form-group">
+                                <div class="am-u-sm-9 am-u-sm-push-3">
+                                    <a href="/PersonalFinance/exportdata/exportIncomeList" class="am-btn am-btn-primary">导出收款信息</a>
+                                </div>
+                            </div>
+
+
+                            <div class="am-form-group">
+                                <div class="am-u-sm-9 am-u-sm-push-3">
+                                    <a href="/PersonalFinance/exportIncomeList" class="am-btn am-btn-primary">导出收款信息</a>
+                                </div>
+                            </div>
+
+
                         </div>
                     </form>
                 </div>
             </div>
+
+
+
             </div>
+
+            <div class="am-g">
+                <div class="am-u-sm-12">
+                    <table class="am-table am-table-bd am-table-striped userview-content-table">
+                        <thead>
+                        <tr>
+                            <th>months</th>
+                            <th>details</th>
+                            <th>rec_amount</th>
+                            <th>rec_date</th>
+                            <th>remarks</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="Income : ${list}">
+                            <td th:text="${Income.months}"></td>
+                            <td th:text="${Income.detail}"></td>
+                            <td th:text="${Income.rec_amount}"></td>
+                            <td th:text="${#calendars.format(Income.rec_date,'yyyy-MM-dd')}"></td>
+                            <td th:text="${Income.remarks}"></td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+
+
+
+
+                </div>
+            </div>
+
         </div>
         <div th:replace="layout/userview :: footer"></div>
     </div>

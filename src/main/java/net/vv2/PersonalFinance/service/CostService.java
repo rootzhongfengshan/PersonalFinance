@@ -48,5 +48,5 @@ public interface CostService {
 
     public List<Cost> selectCostByDate(String start_time, String end_time);
 
-    public float selectSumCostByDate(String start_time,String end_time);
+    public float selectSumCostByDate(String start_time, String end_time);
 }
