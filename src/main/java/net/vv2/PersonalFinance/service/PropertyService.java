@@ -46,7 +46,7 @@ public interface PropertyService {
      */
     Property selectPropertyById(Integer id);
 
-    public List<Property> selectPropertyByDate(String start_date, String end_date);
+    public List<Property> selectPropertyByDate(String start_date,String end_date);
 
     float selectSumpropertyByDate(String start_date);
 }

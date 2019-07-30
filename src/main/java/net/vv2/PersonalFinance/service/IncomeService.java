@@ -51,8 +51,8 @@ public interface IncomeService {
      * 返回Healthy所有数据
      * @return list
      */
-    public List<Income> selectIncomeByDate(String start_time, String end_time);
+    public List<Income> selectIncomeByDate(String start_time,String end_time);
 
-    public float selectSumIncomeByDate(String start_time, String end_time);
+    public float selectSumIncomeByDate(String start_time,String end_time);
 
 }

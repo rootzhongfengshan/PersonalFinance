@@ -60,7 +60,7 @@ public class ShowDataController {
                            HttpSession session,Model model){
         List<Income> list =incomeService.selectIncomeByDate(start_date,end_date);
         model.addAttribute("list",list);
-        return "PersonalFinance/showdata/IncomeShowList";
+        return "PersonalFinance/showdata/IncomeShow";
     }
 
     @RequestMapping("ShowCostList")
