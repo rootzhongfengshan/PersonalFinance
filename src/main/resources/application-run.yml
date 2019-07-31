@@ -13,16 +13,31 @@ spring:
     username: a419914150@163.com
     password: B8b322927
     default-encoding: UTF-8
-
-
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+          starttls:
+            enable: true
+            required: true
   thymeleaf:
     cache: false
     prefix: classpath:/templates/
     mode: HTML
+    check-template-location: true
+    suffix: .html
+    encoding: UTF-8
+    content-type: text/html # ;charset=<encoding> is added
+
 
 mail:
   fromMail:
-    addr: a419914150@163.com
+    addr: a419914150@163.com  # 发送人
+  receptionMail:
+    addr: fengshanzhong@outlook.com  # 接收人
 
 server:
   port: 9810
