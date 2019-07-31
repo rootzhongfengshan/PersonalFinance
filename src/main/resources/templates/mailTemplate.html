@@ -13,7 +13,7 @@
                 <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">每日消费数据信息查询</strong> </div>
             </div>
             <hr>
-
+            <h3 th:text="${message}">this is a greeting</h3>
             <div class="am-g">
                 <div class="am-u-sm-12">
                     <table class="am-table am-table-bd am-table-striped userview-content-table">
@@ -30,16 +30,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="Cost : ${list}">
-                            <td th:text="${#calendars.format(Cost.consume_date,'yyyy-MM-dd')}"></td>
-                            <td th:text="${Cost.consume_name}"></td>
-                            <td th:text="${Cost.project_fee}"></td>
-                            <td th:text="${Cost.consume_fee}"></td>
-                            <td th:text="${Cost.consume_type}"></td>
-                            <td th:text="${Cost.consume_category}"></td>
-                            <td th:text="${Cost.pay_way}"></td>
-                            <td th:text="${Cost.remarks}"></td>
-                        </tr>
+
 
 
                         </tbody>

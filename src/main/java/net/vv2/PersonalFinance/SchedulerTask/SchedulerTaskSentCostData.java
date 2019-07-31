@@ -10,6 +10,7 @@ import net.vv2.PersonalFinance.service.impl.PropertyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
@@ -19,6 +20,8 @@ import java.util.Date;
 import java.util.List;
 
 @Component
+@Controller
+@RequestMapping(value ="sentmail")
 public class SchedulerTaskSentCostData {
 
     @Autowired
@@ -32,14 +35,15 @@ public class SchedulerTaskSentCostData {
     @Autowired
     private MailService mailService;
     @Scheduled(cron="0 45 17 * * ?")
-    @RequestMapping("sentmail")
+    @RequestMapping("sentmailwithcostmessage")
     public void SentEverydayCostDataByEmail() throws MessagingException {
         Date today = DateUtil.date();
         String  start_date=DateUtil.beginOfMonth(today).toString("yyyy-MM-dd");
         String end_date=DateUtil.formatDate(today);
         List<Cost> list =costService.selectCostByDate(start_date,end_date);
+        String message="zhongfs";
         Context context = new Context();
-        context.setVariable("list", list);
+        context.setVariable("message",  message);
         String str=templateEngine.process("mailTemplate", context);
         mailService.sendHtmlMail("zhongfengshan@qq.com","每日消费信息",str);
 
