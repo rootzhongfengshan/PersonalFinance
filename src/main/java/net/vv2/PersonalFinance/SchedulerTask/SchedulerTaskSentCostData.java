@@ -51,17 +51,18 @@ public class SchedulerTaskSentCostData {
         return "PersonalFinance/sentemail/sentMailWithCost";
     }
 
-    @Scheduled(cron="0 45 22 * * ?")
+    @Scheduled(cron="5 52 21 * * ?")
     public void  SentEverydayCostDataByEmailOnTime() throws MessagingException {
         Date today = DateUtil.date();
         String  start_date=DateUtil.beginOfMonth(today).toString("yyyy-MM-dd");
         String end_date=DateUtil.formatDate(today);
         List<Cost> list =costService.selectCostByDate(start_date,end_date);
-        String message="zhongfs";
+        String message=end_date+"每日消费信息";
         Context context = new Context();
         context.setVariable("message",  message);
+        context.setVariable("list",  list);
         String str=templateEngine.process("mailTemplate", context);
-        mailService.sendHtmlMail("zhongfengshan@qq.com","每日消费信息999",str);
+        mailService.sendHtmlMail("zhongfengshan@qq.com",message,str);
 
     }
 

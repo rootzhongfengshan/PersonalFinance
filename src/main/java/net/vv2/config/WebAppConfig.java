@@ -22,8 +22,6 @@ public class WebAppConfig extends WebMvcConfigurerAdapter{
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         super.addInterceptors(registry);
-
-
         registry.addInterceptor(new MyInterceptor()).addPathPatterns("/baby/**");//添加拦截器并配置拦截请求
         registry.addInterceptor(new MyAdminInterceptor()).addPathPatterns("/admin/**");//后台管理权限拦截判断
         registry.addInterceptor(new PersonalFinanceceptor()).addPathPatterns("/PersonalFinance/**");//添加拦截器并配置拦截请求

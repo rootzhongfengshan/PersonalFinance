@@ -18,7 +18,7 @@
                 <div class="am-u-sm-12">
                     <table class="am-table am-table-bd am-table-striped userview-content-table" border="1" cellspacing="0">
                         <thead>
-                        <tr>
+                        <tr border="1" cellspacing="0">
                             <th>consume_date</th>
                             <th>consume_name</th>
                             <th>project_fee</th>
@@ -30,7 +30,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="Cost : ${list}">
+                        <tr th:each="Cost : ${list}" border="1" cellspacing="0">
                             <td th:text="${#calendars.format(Cost.consume_date,'yyyy-MM-dd')}"></td>
                             <td th:text="${Cost.consume_name}"></td>
                             <td th:text="${Cost.project_fee}"></td>
@@ -50,7 +50,7 @@
 
         </div>
         <!-- footer-->
-        <div th:replace="layout/adminLayout :: footer"></div>
+         <div th:replace="layout/userview :: footer"></div>
     </div>
 
 
