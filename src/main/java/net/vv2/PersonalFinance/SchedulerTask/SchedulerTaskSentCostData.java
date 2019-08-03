@@ -43,6 +43,7 @@ public class SchedulerTaskSentCostData {
         List<Cost> list =costService.selectCostByDate(start_date,end_date);
         String message="每日消费信息"+end_date;
         Context context = new Context();
+
         context.setVariable("message",  message);
         context.setVariable("list",  list);
         String str=templateEngine.process("mailTemplate", context);

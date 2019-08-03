@@ -2,10 +2,12 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head></head>
 <body>
+<h1>
 <span th:text="${message}"></span>
+</h1>
 <div class="am-g">
     <div class="am-u-sm-12">
-        <table class="am-table am-table-bd am-table-striped userview-content-table">
+        <table class="am-table am-table-bd am-table-striped userview-content-table" border="1" cellspacing="0">
             <thead>
             <tr>
                 <th>consume_date</th>
@@ -20,10 +22,10 @@
             </thead>
             <tbody>
             <tr th:each="Cost : ${list}">
-                <td th:text="${#calendars.format(Cost.getConsume_date(),'yyyy-MM-dd')}"></td>
+                <td th:text="${Cost.getConsume_date()}"></td>
                 <td th:text="${Cost.getConsume_name()}"></td>
                 <td th:text="${Cost.getProject_fee()}"></td>
-                <td th:text="${Cost.getConsume_fee()"></td>
+                <td th:text="${Cost.getConsume_fee()}"></td>
                 <td th:text="${Cost.getConsume_type()}"></td>
                 <td th:text="${Cost.getConsume_category()}"></td>
                 <td th:text="${Cost.getPay_way()}"></td>
