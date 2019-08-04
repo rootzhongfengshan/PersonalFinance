@@ -20,52 +20,36 @@ import java.util.Date;
 import java.util.List;
 
 @Component
-@Controller
-@RequestMapping(value ="sentmail")
 public class SchedulerTaskSentCostData {
 
-    @Autowired
-    private IncomeServiceImpl incomeService;
-    @Autowired
-    private PropertyServiceImpl propertyService;
-    @Autowired
-    private CostServiceImpl costService;
-    @Autowired
-    private TemplateEngine templateEngine;
-    @Autowired
-    private MailService mailService;
-    //@Scheduled(cron="0 45 17 * * ?")
-    @RequestMapping("sentmailwithcostmessage")
-    public String  SentEverydayCostDataByEmail(String  start_date,String end_date) throws MessagingException {
-        Date today = DateUtil.date();
-        //String  start_date=DateUtil.beginOfMonth(today).toString("yyyy-MM-dd");
-        //String end_date=DateUtil.formatDate(today);
-        List<Cost> list =costService.selectCostByDate(start_date,end_date);
-        String title="每日消费信息"+end_date;
-        Context context = new Context();
-        context.setVariable("title",  title);
-        context.setVariable("list",  list);
-        context.setVariable("consume_date", end_date);
-        float costsum=costService.selectSumCostByDate(start_date, end_date);
-        context.setVariable("costsum",costsum);
-        String str=templateEngine.process("mailTemplate", context);
-        mailService.sendHtmlMail("zhongfengshan@qq.com",title,str);
-        return "PersonalFinance/sentemail/sentMailWithCost";
-    }
+	@Autowired
+	private IncomeServiceImpl incomeService;
+	@Autowired
+	private PropertyServiceImpl propertyService;
+	@Autowired
+	private CostServiceImpl costService;
+	@Autowired
+	private TemplateEngine templateEngine;
+	@Autowired
+	private MailService mailService;
 
-    @Scheduled(cron="5 52 21 * * ?")
-    public void  SentEverydayCostDataByEmailOnTime() throws MessagingException {
-        Date today = DateUtil.date();
-        String  start_date=DateUtil.beginOfMonth(today).toString("yyyy-MM-dd");
-        String end_date=DateUtil.formatDate(today);
-        List<Cost> list =costService.selectCostByDate(start_date,end_date);
-        String message=end_date+"每日消费信息";
-        Context context = new Context();
-        context.setVariable("message",  message);
-        context.setVariable("list",  list);
-        String str=templateEngine.process("mailTemplate", context);
-        mailService.sendHtmlMail("zhongfengshan@qq.com",message,str);
+	@Scheduled(cron = "5 30 15 * * ?")
+	public void SentEverydayCostDataByEmailOnTime() throws MessagingException {
+		Date today = DateUtil.date();
+		// String
+		// start_date=DateUtil.beginOfMonth(today).toString("yyyy-MM-dd");
+		String now_date = DateUtil.formatDate(today);
+		List<Cost> list = costService.selectCostByDate(now_date, now_date);
+		String title = "每日消费信息" + now_date;
+		Context context = new Context();
+		context.setVariable("title", title);
+		context.setVariable("list", list);
+		context.setVariable("consume_date", now_date);
+		float costsum = costService.selectSumCostByDate(now_date, now_date);
+		context.setVariable("costsum", costsum);
+		String str = templateEngine.process("mailTemplate", context);
+		mailService.sendHtmlMail("zhongfengshan@qq.com", title, str);
 
-    }
+	}
 
 }

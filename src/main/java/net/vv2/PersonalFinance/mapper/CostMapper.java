@@ -93,7 +93,7 @@ public interface CostMapper {
     List<Cost> selectCostByDate(@Param("start_date") String start_date, @Param("end_date") String end_date);
 
 
-    @Select("select sum(consume_fee) from t_detailed_cost_record where  consume_date between #{start_date} and #{end_date}")
+    @Select("select IFNULL(sum(consume_fee),0) from t_detailed_cost_record where  consume_date between #{start_date} and #{end_date}")
     float selectSumCostByDate(@Param("start_date") String start_date, @Param("end_date") String end_date);
 
 

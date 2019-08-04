@@ -52,7 +52,7 @@ public class AnalyseController {
         System.out.println(sum_recamount);
         //保存数据，判断或失败，并进行相关的跳转
         if (!(null==sum_recamount||sum_recamount==0)){
-            String msg = " 添加成功,共收入"+sum_recamount;
+            String msg = "共收入"+sum_recamount;
             String url = "<meta http-equiv=\"refresh\" content=\"2;url=/PersonalFinance/analyse/#tab1\">";
             mv.addObject("msg", msg);
             mv.addObject("url", url);
