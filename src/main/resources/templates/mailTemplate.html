@@ -1,45 +1,72 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <body class="am-with-topbar-fixed-top am-scrollable-vertical">
 
-<div class="am-cf userview-main">
-    <div class="userview-content">
-<h1>
-<span th:text="${message}"></span>
-</h1>
-<div class="am-g">
-    <div class="am-u-sm-12">
-        <table class="am-table am-table-bd am-table-striped userview-content-table" border="1" cellspacing="0">
-            <thead>
-            <tr>
-                <th>consume_date</th>
-                <th>consume_name</th>
-                <th>project_fee</th>
-                <th>consume_fee</th>
-                <th>consume_type</th>
-                <th>consume_category</th>
-                <th>pay_way</th>
-                <th>remarks</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="Cost : ${list}">
-                <td th:text="${Cost.getConsume_date()}"></td>
-                <td th:text="${Cost.getConsume_name()}"></td>
-                <td th:text="${Cost.getProject_fee()}"></td>
-                <td th:text="${Cost.getConsume_fee()}"></td>
-                <td th:text="${Cost.getConsume_type()}"></td>
-                <td th:text="${Cost.getConsume_category()}"></td>
-                <td th:text="${Cost.getPay_way()}"></td>
-                <td th:text="${Cost.getRemarks()}"></td>
-            </tr>
+	<div class="am-cf userview-main">
+		<div class="userview-content">
+			<h1>
+				<span th:text="${title}"></span>
+			</h1>
+			<div class="am-g">
+				<div class="am-u-sm-12">
+					<table
+						class="am-table am-table-bd am-table-striped userview-content-table"
+						border="1" cellspacing="0">
+						<thead>
+							<tr>
+								<th>consume_date</th>
+								<th>consume_name</th>
+								<th>project_fee</th>
+								<th>consume_fee</th>
+								<th>consume_type</th>
+								<th>consume_category</th>
+								<th>pay_way</th>
+								<th>remarks</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="Cost : ${list}">
+								<td th:text="${Cost.consume_date}"></td>
+								<td th:text="${Cost.consume_name}"></td>
+								<td th:text="${Cost.project_fee}"></td>
+								<td th:text="${Cost.consume_fee}"></td>
+								<td th:text="${Cost.consume_type}"></td>
+								<td th:text="${Cost.consume_category}"></td>
+								<td th:text="${Cost.pay_way}"></td>
+								<td th:text="${Cost.remarks}"></td>
+							</tr>
 
 
-            </tbody>
-        </table>
-    </div>
-</div>
-</div>
-</div>
+						</tbody>
+						<tbody>
+							<tr>
+								<td th:text="--"></td>
+								<td th:text="--"></td>
+								<td th:text="--"></td>
+								<td th:text="--"></td>
+								<td th:text="--"></td>
+								<td th:text="--"></td>
+								<td th:text="--"></td>
+								<td th:text="--"></td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+								<td th:text="${consume_date}"></td>
+								<td th:text="合计"></td>
+								<td th:text="--"></td>
+								<td th:text="${costsum}"></td>
+								<td th:text="--"></td>
+								<td th:text="--"></td>
+								<td th:text="--"></td>
+								<td th:text="--"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

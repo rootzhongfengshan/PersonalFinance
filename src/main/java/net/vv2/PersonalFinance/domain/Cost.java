@@ -1,6 +1,10 @@
 package net.vv2.PersonalFinance.domain;
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
  * Healthy
  * @author J.Sky bosichong@qq.com
@@ -12,6 +16,8 @@ public class Cost {
 
 
     private Integer id;
+    @JsonFormat(pattern ="yyyy-MM-dd HH:mm:ss",locale="zh",timezone="GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date consume_date;
     private String consume_name;
     private Float project_fee;

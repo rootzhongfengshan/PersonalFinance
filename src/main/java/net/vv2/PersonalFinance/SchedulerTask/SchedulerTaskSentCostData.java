@@ -41,13 +41,15 @@ public class SchedulerTaskSentCostData {
         //String  start_date=DateUtil.beginOfMonth(today).toString("yyyy-MM-dd");
         //String end_date=DateUtil.formatDate(today);
         List<Cost> list =costService.selectCostByDate(start_date,end_date);
-        String message="每日消费信息"+end_date;
+        String title="每日消费信息"+end_date;
         Context context = new Context();
-
-        context.setVariable("message",  message);
+        context.setVariable("title",  title);
         context.setVariable("list",  list);
+        context.setVariable("consume_date", end_date);
+        float costsum=costService.selectSumCostByDate(start_date, end_date);
+        context.setVariable("costsum",costsum);
         String str=templateEngine.process("mailTemplate", context);
-        mailService.sendHtmlMail("zhongfengshan@qq.com",message,str);
+        mailService.sendHtmlMail("zhongfengshan@qq.com",title,str);
         return "PersonalFinance/sentemail/sentMailWithCost";
     }
 
