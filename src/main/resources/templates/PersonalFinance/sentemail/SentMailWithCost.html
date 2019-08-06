@@ -15,18 +15,23 @@
             <div class="am-tab-panel am-fade" id="tab1">
                 <div class="index am-g am-g-fixed am-animation-fade">
                     <form class="am-form am-form-horizontal" th:action="@{/PersonalFinance/sentemail/sentmailwithcostmessage}">
-                        <div class="am-form-group ">
+                         <div class="am-form-group ">
                             <label for="start_date" class="am-u-sm-3 am-form-label">start_date</label>
                             <div class="am-u-sm-9 am-radio">
-                                <input type="text" class="am-form-field" id="start_date" placeholder="请选择日期" data-am-datepicker readonly required name="start_date" />
+                            <select name="start_date">
+								<option th:selected="${datelists!=null}?${datelist == datelist}"  th:each="datelist:${datelists}" th:text="${datelist}">1</option>
+							</select>
                             </div>
                         </div>
                         <div class="am-form-group ">
                             <label for="end_date" class="am-u-sm-3 am-form-label">end_date</label>
                             <div class="am-u-sm-9 am-radio">
-                                <input type="text" class="am-form-field" id="end_date" placeholder="请选择日期" data-am-datepicker readonly required name="end_date" />
-                            </div>
-                        </div>
+                            <select name="end_date">
+								<option th:selected="${datelists!=null}?${datelist == datelist}"  th:each="datelist:${datelists}" th:text="${datelist}">1</option>
+							</select>
+							</div>
+                        </div> 
+                       
 
                         <div class="am-form-group">
                             <div class="am-u-sm-9 am-u-sm-push-3">

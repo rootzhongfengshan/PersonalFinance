@@ -83,7 +83,7 @@ public interface IncomeMapper {
     })
     List<Income> selectIncomeByDate(@Param("start_date") String start_date, @Param("end_date") String end_date);
 
-    @Select("select sum(rec_amount) from t_income_statement where  rec_date between #{start_date} and #{end_date}")
+    @Select("select IFNULL(sum(rec_amount),0) from t_income_statement where  rec_date between #{start_date} and #{end_date}")
     float selectSumIncomeByDate(@Param("start_date") String start_date, @Param("end_date") String end_date);
 
 }

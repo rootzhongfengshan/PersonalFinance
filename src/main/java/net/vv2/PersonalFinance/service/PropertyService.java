@@ -38,6 +38,9 @@ public interface PropertyService {
      */
     public List<Property> selectAll();
 
+    
+    public List<String> selectAllOrderByRecordDate();
+      
 
     /**
      * 根据ID搜索

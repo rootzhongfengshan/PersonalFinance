@@ -37,6 +37,11 @@ public class PropertyServiceImpl implements PropertyService {
     public List<Property> selectAll() {
         return propertyMapper.selectAll();
     }
+    
+    @Override
+    public List<String> selectAllOrderByRecordDate() {
+        return propertyMapper.selectAllOrderByRecordDate();
+    }
 
     @Override
     public Property selectPropertyById(Integer id) {

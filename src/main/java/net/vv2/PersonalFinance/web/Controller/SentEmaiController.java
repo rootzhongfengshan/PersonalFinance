@@ -22,7 +22,7 @@ import net.vv2.PersonalFinance.service.impl.CostServiceImpl;
 import net.vv2.PersonalFinance.service.impl.IncomeServiceImpl;
 import net.vv2.PersonalFinance.service.impl.PropertyServiceImpl;
 import net.vv2.baby.domain.User;
-import net.vv2.util.DoubleUtil;
+import net.vv2.util.FloatUtil;
 import net.vv2.util.TestPdf;
 
 @Controller
@@ -42,12 +42,14 @@ public class SentEmaiController {
 	
 	@RequestMapping("GotoSentMailWithCost")
     public String gotosaveProperty(Model model){
+		List<String> datelists=propertyService.selectAllOrderByRecordDate();
+		model.addAttribute("datelists",datelists);
         return "PersonalFinance/sentemail/SentMailWithCost";
     }
 
 	// @Scheduled(cron="0 45 17 * * ?")
 	// @RequestMapping("sentmailwithcostmessage")
-	public String SentEverydayCostDataByEmail(String start_date, String end_date) throws MessagingException {
+	public String SentEverydayCostDataByEmail(String start_date, String end_date,Model model) throws MessagingException {
 		Date today = DateUtil.date();
 		// String
 		// start_date=DateUtil.beginOfMonth(today).toString("yyyy-MM-dd");
@@ -62,27 +64,30 @@ public class SentEmaiController {
 		context.setVariable("costsum", costsum);
 		String str = templateEngine.process("mailTemplate", context);
 		mailService.sendHtmlMail("zhongfengshan@qq.com", title, str);
-		return "PersonalFinance/sentemail/sentMailWithCost";
+		
+		List<String> datelists=propertyService.selectAllOrderByRecordDate();
+		model.addAttribute("datelists",datelists);
+        return "PersonalFinance/sentemail/SentMailWithCost";
 	}
 
 	@RequestMapping("sentmailwithcostmessage")
-	public String SentReportByEmail(String start_date, String end_date) throws MessagingException {
+	public String SentReportByEmail(String start_date, String end_date,Model model) throws MessagingException {
 		Date today = DateUtil.date();
 		// start_date=DateUtil.beginOfMonth(today).toString("yyyy-MM-dd");
 		// String end_date=DateUtil.formatDate(today);
-		Float incomesum = incomeService.selectSumIncomeByDate(start_date, end_date);
+		float incomesum = incomeService.selectSumIncomeByDate(start_date, end_date);
 		List<Income> incomelist = incomeService.selectIncomeByDate(start_date, end_date);
 		int incomelen = incomelist.size();
 
-		Float costsum = costService.selectSumCostByDate(start_date, end_date);
+		float costsum = costService.selectSumCostByDate(start_date, end_date);
 		List<Cost> costlist = costService.selectCostByDate(start_date, end_date);
 		int costlen = costlist.size();
 
-		Float startproperty = propertyService.selectSumpropertyByDate(start_date);
+		float startproperty = propertyService.selectSumpropertyByDate(start_date);
 		List<Property> endpropertylist=propertyService.selectPropertyByDate(end_date,end_date);
-		Float endproperty = propertyService.selectSumpropertyByDate(end_date);
-		Double subtract_property =DoubleUtil.sub(DoubleUtil.add(startproperty,incomesum),endproperty);
-		Double diffcost = DoubleUtil.sub(costsum , subtract_property);
+		float endproperty = propertyService.selectSumpropertyByDate(end_date);
+		float subtract_property = FloatUtil.sub(FloatUtil.add(startproperty,incomesum),endproperty);
+		float diffcost = FloatUtil.sub(costsum , subtract_property);
 
 		String title = start_date+"至" + end_date+"个人财务分析报告";
 		Context context = new Context();
@@ -107,6 +112,9 @@ public class SentEmaiController {
 		context.setVariable("consume_date", end_date);
 		String str = templateEngine.process("reportPdfTemplate2", context);
 		mailService.sendHtmlMail("zhongfengshan@qq.com", title, str);
-		return "PersonalFinance/sentemail/sentMailWithCost";
+		
+		List<String> datelists=propertyService.selectAllOrderByRecordDate();
+		model.addAttribute("datelists",datelists);
+        return "PersonalFinance/sentemail/SentMailWithCost";
 	}
 }

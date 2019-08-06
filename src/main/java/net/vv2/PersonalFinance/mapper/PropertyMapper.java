@@ -59,6 +59,11 @@ public interface PropertyMapper {
             @Result(column = "remarks",property = "remarks")
     })
     List<Property> selectAll();
+    
+    
+    @Select("select record_date from t_property_records order by record_date desc ")
+    List<String> selectAllOrderByRecordDate();
+    
 
     /**
      * 根据ID 搜索返回
@@ -108,7 +113,7 @@ public interface PropertyMapper {
     List<Property> selectPropertyByDate(@Param("start_date") String start_date, @Param("end_date") String end_date);
 
 
-    @Select("select all_sum from t_property_records where  record_date = #{start_date} ")
+    @Select("select IFNULL(all_sum,0) from t_property_records where  record_date = #{start_date} ")
     float selectSumpropertyByDate(@Param("start_date") String start_date);
 
 }
