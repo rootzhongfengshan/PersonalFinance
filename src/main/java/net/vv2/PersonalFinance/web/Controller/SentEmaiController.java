@@ -1,5 +1,6 @@
 package net.vv2.PersonalFinance.web.Controller;
 
+import java.io.FileNotFoundException;
 import java.util.Date;
 import java.util.List;
 
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
+import com.lowagie.text.DocumentException;
 import com.xiaoleilu.hutool.date.DateUtil;
 
 import net.vv2.PersonalFinance.domain.Cost;
@@ -23,6 +25,7 @@ import net.vv2.PersonalFinance.service.impl.IncomeServiceImpl;
 import net.vv2.PersonalFinance.service.impl.PropertyServiceImpl;
 import net.vv2.baby.domain.User;
 import net.vv2.util.FloatUtil;
+import net.vv2.util.PdfUtil;
 import net.vv2.util.TestPdf;
 
 @Controller
@@ -39,6 +42,7 @@ public class SentEmaiController {
 	private TemplateEngine templateEngine;
 	@Autowired
 	private MailService mailService;
+	
 	
 	@RequestMapping("GotoSentMailWithCost")
     public String gotosaveProperty(Model model){
@@ -71,7 +75,7 @@ public class SentEmaiController {
 	}
 
 	@RequestMapping("sentmailwithcostmessage")
-	public String SentReportByEmail(String start_date, String end_date,Model model) throws MessagingException {
+	public String SentReportByEmail(String start_date, String end_date,Model model) throws MessagingException, FileNotFoundException, DocumentException {
 		Date today = DateUtil.date();
 		// start_date=DateUtil.beginOfMonth(today).toString("yyyy-MM-dd");
 		// String end_date=DateUtil.formatDate(today);
@@ -112,6 +116,9 @@ public class SentEmaiController {
 		context.setVariable("consume_date", end_date);
 		String str = templateEngine.process("reportPdfTemplate2", context);
 		mailService.sendHtmlMail("zhongfengshan@qq.com", title, str);
+		String filename = title+".pdf";
+		PdfUtil.topdf(str, filename);
+		mailService.sendAttachmentsMail("zhongfengshan@qq.com", title, title, filename);
 		
 		List<String> datelists=propertyService.selectAllOrderByRecordDate();
 		model.addAttribute("datelists",datelists);
