@@ -27,6 +27,7 @@
                             <th>zhaoshang</th>
                             <th>jiaotong</th>
                             <th>jianshe</th>
+                            <th>beijing</th>
                             <th>maomingyouzheng</th>
                             <th>beijingyouzheng</th>
                             <th>gongshang</th>
@@ -38,12 +39,13 @@
                         <tr th:each="Property : ${list}">
                             <td th:text="${#calendars.format(Property.record_date,'yyyy-MM-dd')}"></td>
                             <td th:text="${Property.wechat1}"></td>
-                            <td th:text="${Property.wechat1}"></td>
+                            <td th:text="${Property.wechat2}"></td>
                             <td th:text="${Property.alipay1}"></td>
                             <td th:text="${Property.alipay2}"></td>
                             <td th:text="${Property.zhaoshang}"></td>
                             <td th:text="${Property.jiaotong}"></td>
                             <td th:text="${Property.jianshe}"></td>
+                            <td th:text="${Property.beijing}"></td>
                             <td th:text="${Property.maomingyouzheng}"></td>
                             <td th:text="${Property.beijingyouzheng}"></td>
                             <td th:text="${Property.gongshang}"></td>
