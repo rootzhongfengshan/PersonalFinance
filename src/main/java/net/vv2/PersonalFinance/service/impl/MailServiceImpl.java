@@ -106,14 +106,14 @@ public class MailServiceImpl implements MailService {
         MimeMessage message = mailSender.createMimeMessage();
 
         try {
-            MimeMessageHelper helper = new MimeMessageHelper(message, true);
+            MimeMessageHelper helper = new MimeMessageHelper(message, true,"UTF-8");
             helper.setFrom(from);
             helper.setTo(toAddr);
             helper.setSubject(title);
             helper.setText(content, true);
 
             FileSystemResource file = new FileSystemResource(new File(filePath));
-            String fileName = filePath.substring(filePath.lastIndexOf(File.separator));
+            String fileName = file.getFilename();
             helper.addAttachment(fileName, file);
             //helper.addAttachment("test"+fileName, file);
 

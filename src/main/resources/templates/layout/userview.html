@@ -8,21 +8,19 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <title th:text="${title}" >Title</title>
+    
     <!-- amazeui -->
     <link th:href="@{/amazeui/assets/css/amazeui.min.css}" rel="stylesheet"/>
-    <link th:href="@{/amazeui/assets/css/zhongfsdefineview.css}" rel="stylesheet"/>
     <link th:href="@{/asserts/css/userview.css}" rel="stylesheet"/>
     <!-- 当前站点CSS样式文件 -->
     <link th:href="@{/amazeui/assets/css/app.css}" rel="stylesheet"/>
-
+	<script th:src="@{/amazeui/assets/js/echarts.min.js}"></script>
     <!-- jQuery -->
     <script th:src="@{/amazeui/assets/js/jquery.min.js}"></script>
     <!-- amazeui.js-->
     <script th:src="@{/amazeui/assets/js/amazeui.min.js}"></script>
     <!--  app后台.js -->
     <script th:src="@{/amazeui/assets/js/app.js}"></script>
-    <!-- 引入 ECharts 文件-->
-    <script th:src="@{/amazeui/assets/js/echarts.min.js}"></script>
     <link rel="alternate icon" type="image/png" th:href="@{/image/baby.png}" >
 
 
@@ -68,6 +66,7 @@
                     <li><a th:href="@{/PersonalFinance/record/saveProperty_0_0_0}" class="am-cf"><span class="am-icon-plus"></span>各账户资产情况统计</a></li>
                     <li><a th:href="@{/PersonalFinance/record/saveIncome_0_0_0}" class="am-cf"><span class="am-icon-plus"></span>添加收款信息</a></li>
                     <li><a th:href="@{/PersonalFinance/record/saveCost_0_0_0}" class="am-cf"><span class="am-icon-plus"></span>消费金额录入</a></li>
+                	<li><a th:href="@{/PersonalFinance/importdata/recordcost}" class="am-cf"><span class="am-icon-plus"></span>消费金额导入</a></li>             
                 </ul>
             </li>
 

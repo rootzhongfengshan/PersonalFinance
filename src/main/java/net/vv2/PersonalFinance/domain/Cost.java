@@ -26,8 +26,11 @@ public class Cost {
     private String consume_category;
     private String pay_way;
     private String remarks;
+    private String consume_datesw;
 
-    public Cost(){
+   
+
+	public Cost(){
 
     }
 
@@ -136,6 +139,14 @@ public class Cost {
     public void setRemarks(String remarks) {
         this.remarks = remarks;
     }
+    
+    public String getConsume_datesw() {
+		return consume_datesw;
+	}
+
+	public void setConsume_datesw(String consume_datesw) {
+		this.consume_datesw = consume_datesw;
+	}
 
     @Override
     public String toString() {

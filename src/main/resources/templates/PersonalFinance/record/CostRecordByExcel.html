@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="layout/userview :: htmlhead(title='涓汉璐㈠姟绠＄悊绯荤粺棣栭〉')"></head>
+<body class="am-with-topbar-fixed-top am-scrollable-vertical">
+<div th:replace="layout/userview :: header"></div>
+<div class="am-cf userview-main">
+    <div th:replace="layout/userview :: sidebar"></div>
+    <div class="userview-content">
+
+        <div class="am-tabs am-g am-g-fixed am-animation-fade myfromtable" data-am-tabs>
+            <ul class="am-tabs-nav am-nav am-nav-tabs">
+                <li><a href="#tab1">导入文件</a></li>
+            </ul>
+            <div class="am-tabs-bd">
+            <div class="am-tab-panel am-fade" id="tab1">
+                <div class="index am-g am-g-fixed am-animation-fade">
+                       
+                            <form class="am-form am-form-horizontal" action="/upload" method="post" enctype="multipart/form-data" th:action="@{/PersonalFinance/importdata/uploadexcel}">
+    							 <div class="am-form-group ">
+    							 <input type="file" name="file" class="am-u-sm-3 am-form-label">
+    							 </div>	
+    							 
+    							<div class="am-form-group">
+                            	<div class="am-u-sm-9 am-u-sm-push-3">
+    							<button type="submit" class="am-btn am-btn-primary">上传</button>
+    							</div>
+                        		</div>	
+    							
+							</form>
+                        
+                 </div>   
+            </div>
+            </div>
+
+        <div th:replace="layout/userview :: footer"></div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

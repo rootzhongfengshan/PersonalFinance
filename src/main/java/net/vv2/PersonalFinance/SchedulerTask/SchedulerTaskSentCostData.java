@@ -33,7 +33,7 @@ public class SchedulerTaskSentCostData {
 	@Autowired
 	private MailService mailService;
 
-	@Scheduled(cron = "5 30 15 * * ?")
+	@Scheduled(cron = "5 30 22 * * ?")
 	public void SentEverydayCostDataByEmailOnTime() throws MessagingException {
 		Date today = DateUtil.date();
 		// String

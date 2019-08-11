@@ -23,6 +23,7 @@ public class Property {
     private Float gongshang;
     private Float all_sum;
     private String remarks;
+    private String record_datesw;
     public Property(){
 
     }
@@ -195,7 +196,15 @@ public class Property {
         this.remarks = remarks;
     }
 
-    @Override
+    public String getRecord_datesw() {
+		return record_datesw;
+	}
+
+	public void setRecord_datesw(String record_datesw) {
+		this.record_datesw = record_datesw;
+	}
+
+	@Override
     public String toString() {
         return "Property{" +
                 "id=" + id +

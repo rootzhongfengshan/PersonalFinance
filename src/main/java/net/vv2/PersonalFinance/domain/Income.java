@@ -17,6 +17,7 @@ public class Income {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date rec_date;
     private String remarks;
+    private String rec_datesw;
 
     public Income() {
 
@@ -110,7 +111,17 @@ public class Income {
         this.remarks = remarks;
     }
 
-    @Override
+    public String getRec_datesw() {
+		return rec_datesw;
+	}
+
+
+	public void setRec_datesw(String rec_datesw) {
+		this.rec_datesw = rec_datesw;
+	}
+
+
+	@Override
     public String toString() {
         return "Income{" +
                 "id=" + id +

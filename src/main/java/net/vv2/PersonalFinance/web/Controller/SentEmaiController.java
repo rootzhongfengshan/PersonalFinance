@@ -82,14 +82,24 @@ public class SentEmaiController {
 		float incomesum = incomeService.selectSumIncomeByDate(start_date, end_date);
 		List<Income> incomelist = incomeService.selectIncomeByDate(start_date, end_date);
 		int incomelen = incomelist.size();
+		for (Income income:incomelist) {
+			income.setRec_datesw(DateUtil.formatDate(income.getRec_date()));;
+		}
 
 		float costsum = costService.selectSumCostByDate(start_date, end_date);
 		List<Cost> costlist = costService.selectCostByDate(start_date, end_date);
 		int costlen = costlist.size();
-
+		for (Cost cost:costlist) {
+			cost.setConsume_datesw(DateUtil.formatDate(cost.getConsume_date()));
+		}
+		
 		float startproperty = propertyService.selectSumpropertyByDate(start_date);
 		List<Property> endpropertylist=propertyService.selectPropertyByDate(end_date,end_date);
 		float endproperty = propertyService.selectSumpropertyByDate(end_date);
+		for (Property property:endpropertylist) {
+			property.setRecord_datesw(DateUtil.formatDate(property.getRecord_date()));
+		}
+		
 		float subtract_property = FloatUtil.sub(FloatUtil.add(startproperty,incomesum),endproperty);
 		float diffcost = FloatUtil.sub(costsum , subtract_property);
 

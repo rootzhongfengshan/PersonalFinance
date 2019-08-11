@@ -4,6 +4,7 @@ import net.vv2.PersonalFinance.domain.Cost;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author J.Sky bosichong@qq.com
@@ -21,6 +22,9 @@ public interface CostMapper {
     @Insert("insert into t_detailed_cost_record(id,consume_date,consume_name,project_fee,consume_fee,consume_type,consume_category,pay_way,remarks) values(#{id},#{consume_date},#{consume_name},#{project_fee},#{consume_fee},#{consume_type},#{consume_category},#{pay_way},#{remarks})")
     @Options(useGeneratedKeys = true,keyProperty = "id")
     int insertCost(Cost cost);
+    
+    
+    //void saveCostFromMap(@Param("costMap") Map<String,Object> costMap);
     /**
      * 更新数据
      * @param cost
@@ -39,7 +43,7 @@ public interface CostMapper {
      * 返回所有 Cost 数据
      * @return list
      */
-    @Select("select * from t_detailed_cost_record")
+    @Select("select * from t_detailed_cost_record order by consume_date")
     @Results({
             @Result(id = true,column = "id",property = "id"),
             @Result(column = "consume_date",property = "consume_date"),
@@ -78,7 +82,7 @@ public interface CostMapper {
      * @param end_date
      * @return
      */
-    @Select("select * from t_detailed_cost_record where  consume_date between #{start_date} and #{end_date}")
+    @Select("select * from t_detailed_cost_record where  consume_date between #{start_date} and #{end_date} order by consume_date")
     @Results({
             @Result(id = true,column = "id",property = "id"),
             @Result(column = "consume_date",property = "consume_date"),

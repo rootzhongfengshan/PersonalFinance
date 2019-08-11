@@ -1,11 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
-<body class="am-with-topbar-fixed-top am-scrollable-vertical" style="font-family:SimSun;">
+<page size="A4" layout="landscape"
+	style="background: white;display: block;margin: 0 auto;margin-bottom: 0.5cm;box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);width: 29.7cm;height: 21cm;">
+<body class="am-with-topbar-fixed-top am-scrollable-vertical"
+	style="font-family: SimSun;">
 
 	<p style="margin: 0; margin-bottom: 20px;">
-		你好，这是你<span th:text="${startdate}" />至<span
-			th:text="${enddate}" /> 的个人收支财务分析报告，请查收！
+		你好，这是你<span th:text="${startdate}" />至<span th:text="${enddate}" />
+		的个人收支财务分析报告，请查收！
 	</p>
 	<p style="margin: 0; margin-bottom: 20px;">
 		一，收入情况，你本月有<span th:text="${incomelen}" />笔收款，合计<span
@@ -15,14 +19,14 @@
 		<div class="am-u-sm-12">
 			<table
 				class="am-table am-table-bd am-table-striped userview-content-table"
-				border="1" cellspacing="0">
+				border="1" cellspacing="0" style="text-align:center">
 				<thead>
 					<tr>
 						<th>months</th>
 						<th>details</th>
-						<th>rec_amount</th>
-						<th>rec_date</th>
-						<th>remarks</th>
+						<th>recamount</th>
+						<th>recdate</th>
+						<!-- <th>remarks</th> -->
 					</tr>
 				</thead>
 				<tbody>
@@ -30,8 +34,8 @@
 						<td th:text="${Income.months}"></td>
 						<td th:text="${Income.detail}"></td>
 						<td th:text="${Income.rec_amount}"></td>
-						<td th:text="${Income.rec_date}"></td>
-						<td th:text="${Income.remarks}"></td>
+						<td th:text="${Income.rec_datesw}"></td>
+						<!-- 	<td th:text="${Income.remarks}"></td> -->
 					</tr>
 				</tbody>
 			</table>
@@ -46,29 +50,29 @@
 		<div class="am-u-sm-12">
 			<table
 				class="am-table am-table-bd am-table-striped userview-content-table"
-				border="1" cellspacing="0">
+				border="1" cellspacing="0" style="text-align:center">
 				<thead>
 					<tr>
-						<th>consume_date</th>
-						<th>consume_name</th>
-						<th>project_fee</th>
-						<th>consume_fee</th>
-						<th>consume_type</th>
-						<th>consume_category</th>
-						<th>pay_way</th>
-						<th>remarks</th>
+						<th>consumedate</th>
+						<th>consumename</th>
+						<!-- <th>project_fee</th> -->
+						<th>consumefee</th>
+						<th>consumetype</th>
+						<th>consumecategory</th>
+						<th>payway</th>
+						<!-- <th>remarks</th> -->
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="Cost : ${costlist}">
-						<td th:text="${Cost.consume_date}"></td>
+						<td th:text="${Cost.consume_datesw}"></td>
 						<td th:text="${Cost.consume_name}"></td>
-						<td th:text="${Cost.project_fee}"></td>
+						<!-- <td th:text="${Cost.project_fee}"></td> -->
 						<td th:text="${Cost.consume_fee}"></td>
-						<td th:text="${Cost.consume_type}"></td>
+						<!-- <td th:text="${Cost.consume_type}"></td> -->
 						<td th:text="${Cost.consume_category}"></td>
 						<td th:text="${Cost.pay_way}"></td>
-						<td th:text="${Cost.remarks}"></td>
+						<!-- <td th:text="${Cost.remarks}"></td> -->
 					</tr>
 				</tbody>
 			</table>
@@ -76,64 +80,94 @@
 	</div>
 	<br></br>
 	<p style="margin: 0; margin-bottom: 20px;">
-		三，账户余额情况，经统计，你期初（<span th:text="${startdate}" />）余额为：<span
+		三，账户余额情况，经统计：</p>
+	<p>
+		你期初（<span th:text="${startdate}" />）余额为：<span
 			th:text="${startproperty}" />元，期末（<span th:text="${enddate}" />）
-			余额为：<span th:text="${endproperty}" />元。 </p>
+		余额为：<span th:text="${endproperty}" />元。
+	</p>
 	<p style="margin: 0; margin-bottom: 20px;">
-	以下为本月期末（<span th:text="${enddate}" />）余额情况：
+		以下为本月期末（<span th:text="${enddate}" />）余额情况：
 	</p>
 	<div class="am-g">
-                <div class="am-u-sm-12">
-                    <table class="am-table am-table-bd am-table-striped userview-content-table" border="1" cellspacing="0">
-                        <thead>
-                        <tr>
-                            <th>record_date</th>
-                            <th>wechat1</th>
-                            <th>wechat2</th>
-                            <th>alipay1</th>
-                            <th>alipay2</th>
-                            <th>zhaoshang</th>
-                            <th>jiaotong</th>
-                            <th>jianshe</th>
-                            <th>maomingyouzheng</th>
-                            <th>beijingyouzheng</th>
-                            <th>gongshang</th>
-                            <th>all_sum</th>
-                            <th>remarks</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr th:each="Property : ${endpropertylist}">
-                            <td th:text="${Property.record_date}"></td>
-                            <td th:text="${Property.wechat1}"></td>
-                            <td th:text="${Property.wechat1}"></td>
-                            <td th:text="${Property.alipay1}"></td>
-                            <td th:text="${Property.alipay2}"></td>
-                            <td th:text="${Property.zhaoshang}"></td>
-                            <td th:text="${Property.jiaotong}"></td>
-                            <td th:text="${Property.jianshe}"></td>
-                            <td th:text="${Property.maomingyouzheng}"></td>
-                            <td th:text="${Property.beijingyouzheng}"></td>
-                            <td th:text="${Property.gongshang}"></td>
-                            <td th:text="${Property.all_sum}"></td>
-                            <td th:text="${Property.remarks}"></td>
-                        </tr>
+		<div  style="magin:0 auto;">
+			<table
+				class="am-table am-table-bd am-table-striped userview-content-table"
+				border="1" cellspacing="0" style="text-align:center">
+				<tbody th:each="Property : ${endpropertylist}">
+					<tr>
+						<th>recorddate</th>
+						<td th:text="${Property.record_datesw}"></td>
+					</tr>
+					<tr>
+						<th>wechat1</th>
+						<td th:text="${Property.wechat1}"></td>
+					</tr>
+					<tr>
+						<th>wechat2</th>
+						<td th:text="${Property.wechat2}"></td>
+					</tr>
+					<tr>
+						<th>alipay1</th>
+						<td th:text="${Property.alipay1}"></td>
+					</tr>
+					<tr>
+						<th>alipay2</th>
+						<td th:text="${Property.alipay2}"></td>
+					</tr>
+					<tr>
+						<th>zhaoshang</th>
+						<td th:text="${Property.zhaoshang}"></td>
+					</tr>
+					<tr>
+						<th>jiaotong</th>
+						<td th:text="${Property.jiaotong}"></td>
+					</tr>
+					<tr>
+						<th>jianshe</th>
+						<td th:text="${Property.jianshe}"></td>
+					</tr>
+					<tr>
+						<th>beijing</th>
+						<td th:text="${Property.beijing}"></td>
+					</tr>
+					<tr>
+						<th>mmyz</th>
+						<td th:text="${Property.maomingyouzheng}"></td>
+					</tr>
+					<tr>
+						<th>bjyz</th>
+						<td th:text="${Property.beijingyouzheng}"></td>
+					</tr>
+					<tr>
+						<th>gongshang</th>
+						<td th:text="${Property.gongshang}"></td>
+					</tr>
+					<tr>
+						<th>all_sum</th>
+						<td th:text="${Property.all_sum}"></td>
+					</tr>
 
 
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+
+	<p style="margin: 0; margin-bottom: 20px;">四，本月具体分析情况</p>
 	<p style="margin: 0; margin-bottom: 20px;">
-	四，本月具体分析情况
+		期初余额<span th:text="${startproperty}" />元+本月收入合计<span
+			th:text="${incomesum}" />元-本月期末余额<span th:text="${endproperty}" />元=<span
+			th:text="${subtract_property}" />元
 	</p>
 	<p style="margin: 0; margin-bottom: 20px;">
-期初余额<span th:text="${startproperty}" />元+本月收入合计<span th:text="${incomesum}" />元-本月期末余额<span th:text="${endproperty}" />元=<span th:text="${subtract_property}" />元
+		本月支出合计<span th:text="${costsum}" />元，两个维度统计相差<span
+			th:text="${diffcost}" />元。
 	</p>
-	<p style="margin: 0; margin-bottom: 20px;">
-本月支出合计<span th:text="${costsum}" />元，两个维度统计相差<span th:text="${diffcost}" />元。
-	</p>
-	
-	
+
+
 </body>
+</page>
 </html>
