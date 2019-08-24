@@ -52,28 +52,33 @@
                         </div>
                     </div>
 
-
                     <div class="am-form-group ">
                         <label for="consume_type" class="am-u-sm-3 am-form-label">consume_type</label>
                         <div class="am-u-sm-9 am-radio">
-                            <input type="text" id="consume_type" name="consume_type" placeholder="consume_type">
-                        </div>
+                            <select name="consume_type">
+								<option th:value="${type.consume_type}"  th:each="type:${consumetypecategory}" th:text="${type.consume_type}">1</option>
+							</select>
+                            </div>    
+                        
                     </div>
 
                     <div class="am-form-group ">
                         <label for="consume_category" class="am-u-sm-3 am-form-label">consume_category</label>
                         <div class="am-u-sm-9 am-radio">
-                            <input type="text" id="consume_category" name="consume_category" placeholder="consume_category">
-                        </div>
+                            <select name="consume_category">
+								<option th:value="${category.consume_category}"  th:each="category:${consumetypecategory}" th:text="${category.consume_category}">1</option>
+							</select>
+                            </div>    
                     </div>
 
                     <div class="am-form-group ">
                         <label for="pay_way" class="am-u-sm-3 am-form-label">pay_way</label>
                         <div class="am-u-sm-9 am-radio">
-                            <input type="text" id="pay_way" name="pay_way" placeholder="pay_way">
-                        </div>
+                            <select name="pay_way">
+								<option th:value="${payway.payWay}"  th:each="payway:${payways}" th:text="${payway.payWay}">1</option>
+							</select>
+                            </div>     
                     </div>
-
                     <div class="am-form-group ">
                         <label for="remarks" class="am-u-sm-3 am-form-label">remarks</label>
                         <div class="am-u-sm-9 am-radio">
@@ -103,6 +108,11 @@
     <script th:src="@{/amazeui/assets/js/home.js}"></script>
     <div th:replace="layout/layout :: footer"></div>
 
-
+<script>
+$(function() {
+	var TodayDate = new Date();
+	  $('#consume_date').datepicker('setValue', TodayDate);
+	});
+</script>
 </body>
 </html>

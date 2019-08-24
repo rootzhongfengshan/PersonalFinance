@@ -146,7 +146,12 @@
     <!-- home.js -->
     <script th:src="@{/amazeui/assets/js/home.js}"></script>
     <div th:replace="layout/layout :: footer"></div>
-
+<script>
+$(function() {
+	var TodayDate = new Date();
+	  $('#record_date').datepicker('setValue', TodayDate);
+	});
+</script>
 
 </body>
 </html>

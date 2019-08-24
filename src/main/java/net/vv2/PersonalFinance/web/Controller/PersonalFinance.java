@@ -4,6 +4,9 @@ import com.xiaoleilu.hutool.date.DateUtil;
 import net.vv2.PersonalFinance.domain.Cost;
 import net.vv2.PersonalFinance.domain.Income;
 import net.vv2.PersonalFinance.domain.Property;
+import net.vv2.PersonalFinance.domain.TPayWayEntity;
+import net.vv2.PersonalFinance.service.PaywayService;
+import net.vv2.PersonalFinance.service.TConsumeTypeCategoryService;
 import net.vv2.PersonalFinance.service.impl.CostServiceImpl;
 import net.vv2.PersonalFinance.service.impl.IncomeServiceImpl;
 import net.vv2.PersonalFinance.service.impl.PropertyServiceImpl;
@@ -16,6 +19,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -31,10 +36,23 @@ public class PersonalFinance {
     private PropertyServiceImpl propertyService;
     @Autowired
     private CostServiceImpl costService;
+    @Autowired
+    private PaywayService paywayService;
+    @Autowired
+    private TConsumeTypeCategoryService tConsumeTypeCategoryService;
 
+    private Model getPaywayAndConsumeType(Model model) {
+    	List<TPayWayEntity> payways=paywayService.selectPaywayAll();
+    	List<Map<String,String>> consumetypecategory=tConsumeTypeCategoryService.selectConsumeType();
+    	model.addAttribute("consumetypecategory",consumetypecategory);
+		model.addAttribute("payways",payways);
+		return model;
+    }
+    
 
     @RequestMapping("index")
     public String index(Model model){
+    	model=getPaywayAndConsumeType(model);
         return "PersonalFinance/index";
     }
 
@@ -60,6 +78,7 @@ public class PersonalFinance {
 
     @RequestMapping("record/saveCost_0_0_0")
     public String gotosaveCost(Model model){
+    	model=getPaywayAndConsumeType(model);
         return "PersonalFinance/record/Cost";
     }
 
