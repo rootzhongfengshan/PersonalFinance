@@ -41,7 +41,7 @@
 			<div class="am-collapse am-topbar-collapse" id="collapse-head">
 				<ul class="am-nav am-nav-pills am-topbar-nav">
 					<!-- <li><a th:href="@{/baby/home/}">首页</a></li> -->
-					<li><a th:href="@{/PersonalFinance/index/}">个人账务数据录入</a></li>
+					<li><a th:href="@{/PersonalFinance/index/}">首页</a></li>
 
 					<li class="am-dropdown" data-am-dropdown=""><a
 						class="am-dropdown-toggle" data-am-dropdown-toggle=""
@@ -171,6 +171,21 @@
 							class="am-icon-mail-forward"></span>消费金额查询发送</a></li>
 					<li><a th:href="@{/admin/healthy/healthyList}"><span
 							class="am-icon-mail-forward"></span>消费金额查询</a></li>
+				</ul></li>
+				
+				<li class="userview-parent"><a
+				th:href="@{/PersonalFinance/sentemail/}" class="am-cf"
+				data-am-collapse="{target: '#blog-nav'}"><span
+					class="am-icon-bars"></span>个人体重管理<span
+					class="am-icon-angle-right am-fr am-margin-right"></span></a>
+				<ul class="am-list am-collapse userview-sidebar-sub am-in"
+					id="sent-nav">
+
+					<li><a
+						th:href="@{/HealthyManager/index}"><span
+							class="am-icon-mail-forward"></span>个人体重折线图</a></li>
+					<li><a th:href="@{/HealthyManager/record.html}"><span
+							class="am-icon-mail-forward"></span>个人体重数据记录</a></li>
 				</ul></li>
 
 		</ul>

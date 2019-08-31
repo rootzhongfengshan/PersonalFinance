@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $.get("/baby/app/HealthyRestJson", function (data, status) {
+    $.get("/selfmanagement/weight", function (data, status) {
 
 
         //alert(data.height);
@@ -11,13 +11,13 @@ $(document).ready(function () {
         // 指定图表的配置项和数
         var option = {
             title: {
-                text: '宝贝成长'
+                text: '我的体重折线图'
             },
             tooltip: {
                 trigger: 'axis'
             },
             legend: {
-                data: ['身高(厘米)', '体重(公斤)']
+                data: ['', '体重(公斤)']
             },
             grid: {
                 left: '3%',
@@ -36,7 +36,11 @@ $(document).ready(function () {
                 data: data.times
             },
             yAxis: {
-                type: 'value'
+            	//scale: true,
+                type: 'value',
+                min: 70,
+                max: 80,
+                
             },
             series: [
                 {
@@ -46,7 +50,7 @@ $(document).ready(function () {
                     data: data.height
                 },
                 {
-                    name: '体重(公斤)',
+                    name: '体重(公斤)',
                     type: 'line',
                     stack: '总量',
                     data: data.weight
