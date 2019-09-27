@@ -2,10 +2,10 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
-<page size="A4" layout="landscape"
-	style="background: white;display: block;margin: 0 auto;margin-bottom: 0.5cm;box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);width: 29.7cm;height: 21cm;">
+<page layout="landscape"
+	style="background: white;display: block;margin: 0 auto;margin-bottom: 0.5cm;box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);">
 <body class="am-with-topbar-fixed-top am-scrollable-vertical"
-	style="font-family: SimSun;">
+	style="font-family: SimSun;size:297mm 210mm;">
 
 	<p style="margin: 0; margin-bottom: 20px;">
 		你好，这是你<span th:text="${startdate}" />至<span th:text="${enddate}" />
@@ -50,7 +50,7 @@
 		<div class="am-u-sm-12">
 			<table
 				class="am-table am-table-bd am-table-striped userview-content-table"
-				border="1" cellspacing="0" style="text-align:center">
+				border="1" cellspacing="0" style="text-align:center;border-collapse:collapse;">
 				<thead>
 					<tr>
 						<th>consumedate</th>
@@ -71,7 +71,7 @@
 						<td th:text="${Cost.consume_fee}"></td>
 						<!-- <td th:text="${Cost.consume_type}"></td> -->
 						<td th:text="${Cost.consume_category}"></td>
-						<td th:text="${Cost.pay_way}"></td>
+						<td style="empty-cells:show;" th:text="${Cost.pay_way}"></td>
 						<!-- <td th:text="${Cost.remarks}"></td> -->
 					</tr>
 				</tbody>

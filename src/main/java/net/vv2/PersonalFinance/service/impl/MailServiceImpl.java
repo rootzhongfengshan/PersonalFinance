@@ -13,7 +13,10 @@ import org.springframework.stereotype.Component;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeUtility;
+
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 
 @Component
 public class MailServiceImpl implements MailService {
@@ -114,7 +117,12 @@ public class MailServiceImpl implements MailService {
 
             FileSystemResource file = new FileSystemResource(new File(filePath));
             String fileName = file.getFilename();
-            helper.addAttachment(fileName, file);
+            try {
+				helper.addAttachment(MimeUtility.encodeWord(fileName,"utf8","B"), file);
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
             //helper.addAttachment("test"+fileName, file);
 
             mailSender.send(message);

@@ -1,6 +1,7 @@
 package net.vv2.PersonalFinance.web.Controller;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
@@ -27,6 +28,7 @@ import net.vv2.baby.domain.User;
 import net.vv2.util.FloatUtil;
 import net.vv2.util.PdfUtil;
 import net.vv2.util.TestPdf;
+import net.vv2.util.WriteFileUtil;
 
 @Controller
 // @RequestMapping(value="/PersonalFinance/sentemail")
@@ -75,7 +77,7 @@ public class SentEmaiController {
 	}
 
 	@RequestMapping("sentmailwithcostmessage")
-	public String SentReportByEmail(String start_date, String end_date,Model model) throws MessagingException, FileNotFoundException, DocumentException {
+	public String SentReportByEmail(String start_date, String end_date,Model model) throws MessagingException, DocumentException, Exception {
 		Date today = DateUtil.date();
 		// start_date=DateUtil.beginOfMonth(today).toString("yyyy-MM-dd");
 		// String end_date=DateUtil.formatDate(today);
@@ -127,8 +129,12 @@ public class SentEmaiController {
 		String str = templateEngine.process("reportPdfTemplate2", context);
 		mailService.sendHtmlMail("zhongfengshan@qq.com", title, str);
 		String filename = title+".pdf";
+		String htmlFileName = title+".html";
 		PdfUtil.topdf(str, filename);
+		WriteFileUtil.WriteStringToHtml(str,htmlFileName);
 		mailService.sendAttachmentsMail("zhongfengshan@qq.com", title, title, filename);
+		
+		mailService.sendAttachmentsMail("zhongfengshan@qq.com", title, title, htmlFileName);
 		
 		List<String> datelists=propertyService.selectAllOrderByRecordDate();
 		model.addAttribute("datelists",datelists);
