@@ -4,9 +4,9 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     #url: jdbc:mysql://47.104.108.36:3306/baby?useUnicode=true&characterEncoding=utf8
     url: jdbc:mysql://localhost:3306/baby?useUnicode=true&characterEncoding=utf8
-    username: root
+    username: zhongfs
     #password: zhongfs322
-    password: root
+    password: zhongfs_123
   mail:
     host: smtp.163.com
     port: 465
