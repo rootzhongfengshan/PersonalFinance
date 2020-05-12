@@ -13,7 +13,16 @@ spring:
     username: a419914150@163.com
     password: B8b322927
     default-encoding: UTF-8
-
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+          starttls:
+            enable: true
+            required: true
 
   thymeleaf:
     cache: false
