@@ -17,20 +17,20 @@
             <form class="am-form am-form-horizontal" th:action="@{/PersonalFinance/record/saveIncome}">
 
                 <div class="am-form-group ">
-                    <label for="months" class="am-u-sm-3 am-form-label">月份 / months</label>
+                    <label for="months" class="am-u-sm-3 am-form-label">收款月份 / months</label>
                     <div class="am-u-sm-9 am-radio">
                         <input type="text" id="months" name="months" placeholder="月份">
                     </div>
                 </div>
                 <div class="am-form-group ">
-                    <label for="detail" class="am-u-sm-3 am-form-label">收款细节类别 / detail</label>
+                    <label for="detail" class="am-u-sm-3 am-form-label">收款描述 / detail</label>
                     <div class="am-u-sm-9 am-radio">
                         <input type="text" id="detail" name="detail" placeholder="detail">
                     </div>
                 </div>
 
                 <div class="am-form-group">
-                    <label for="rec_amount" class="am-u-sm-3 am-form-label">收款金额 / rec_amount</label>
+                    <label for="rec_amount" class="am-u-sm-3 am-form-label">收款金额 / recAmount</label>
                     <div class="am-u-sm-9 am-radio">
                         <input type="text" id="rec_amount" name="rec_amount" placeholder="">
 
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="am-form-group">
-                    <label for="rec_date" class="am-u-sm-3 am-form-label">收款日期 / rec_date</label>
+                    <label for="rec_date" class="am-u-sm-3 am-form-label">收款日期 / recDate</label>
                     <div class="am-u-sm-9 am-radio">
                         <input type="text" class="am-form-field" id="rec_date" placeholder="请选择日期" data-am-datepicker readonly required name="rec_date" />
 
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="am-form-group ">
-                    <label for="remarks" class="am-u-sm-3 am-form-label">备注 / remarks</label>
+                    <label for="remarks" class="am-u-sm-3 am-form-label">备注信息 / remarks</label>
                     <div class="am-u-sm-9 am-radio">
                         <input type="text" id="remarks" name="remarks" placeholder="remarks">
                     </div>
@@ -65,16 +65,13 @@
 
 </div>
 </div>
-        <div th:replace="layout/layout :: footer"></div>
+        <div th:replace="layout/userview :: footer"></div>
     </div>
 
 
 </div>
-
-
     <!-- home.js -->
-    <script th:src="@{/amazeui/assets/js/home.js}"></script>
-    <div th:replace="layout/layout :: footer"></div>
+
 <script>
 $(function() {
 	var TodayDate = new Date();

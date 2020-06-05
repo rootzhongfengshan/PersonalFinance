@@ -99,8 +99,8 @@
                 x: '0%', // for funnel
                 itemStyle: labelFromatter,
                 data: [
-                    {name: 'other', value: 46, itemStyle: labelBottom},
-                    {name: '', value: 54, itemStyle: labelTop}
+                    {name: 'other', value: 2, itemStyle: labelBottom},
+                    {name: '', value: 98, itemStyle: labelTop}
                 ]
             }
 

@@ -1,8 +1,8 @@
 package net.vv2.admin.web;
 
 import com.xiaoleilu.hutool.crypto.SecureUtil;
-import net.vv2.baby.domain.User;
-import net.vv2.baby.service.impl.UserServiceImpl;
+import net.vv2.system.domain.User;
+import net.vv2.system.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 用户资料增删改
  *
- * @author J.Sky bosichong@qq.com
+ * @author zhongfs zhongfengshan@yahoo.com
  * @create 2017-06-19 21:41
  **/
 @Controller

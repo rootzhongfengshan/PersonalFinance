@@ -1,8 +1,8 @@
 package net.vv2.config;
 
-import net.vv2.PersonalFinance.web.Interceptor.PersonalFinanceceptor;
-import net.vv2.baby.web.Interceptor.MyAdminInterceptor;
-import net.vv2.baby.web.Interceptor.MyInterceptor;
+import net.vv2.personal.finance.web.Interceptor.PersonalFinanceceptor;
+import net.vv2.system.Interceptor.MyAdminInterceptor;
+import net.vv2.system.Interceptor.MyInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 /**
  * 配置拦截器
- * @author J.Sky bosichong@qq.com
+ * @author zhongfs zhongfengshan@yahoo.com
  * @create 2017-06-10 15:21
  **/
 
@@ -42,7 +42,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter{
             @Override
             public void addViewControllers(ViewControllerRegistry registry) {
                 registry.addViewController("/").setViewName("login");
-                registry.addViewController("/index.html").setViewName("login");
+                registry.addViewController("/allDetailReport.html").setViewName("login");
             }
         };
         return adapter;

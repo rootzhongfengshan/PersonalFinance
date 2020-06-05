@@ -38,7 +38,9 @@ server:
 
 
 
-###############################################
+
+
+    ###############################################
 #spring.thymeleaf.cache=false
 #spring.thymeleaf.mode=LEGACYHTML5
 
@@ -83,3 +85,5 @@ logging:
 #    port: 8084
 #  spring:
 #    profiles: prod  #指定属于哪个环境
+upload:
+  quotaFile: /home/damuser/dam/quota/excel/

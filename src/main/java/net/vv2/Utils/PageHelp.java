@@ -6,7 +6,7 @@ import com.xiaoleilu.hutool.util.PageUtil;
 /**
  * 简单分页工具
  * 返回总页数，并根据当前页值取得mysql limit 偏移量值
- * @author J.Sky bosichong@qq.com
+ * @author zhongfs zhongfengshan@yahoo.com
  * @create 2017-06-13 11:16
  **/
 public class PageHelp {

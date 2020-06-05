@@ -4,22 +4,18 @@ import com.xiaoleilu.hutool.date.DateUtil;
 
 import net.vv2.SelfManagement.domain.Weight;
 import net.vv2.SelfManagement.service.WeightService;
-import net.vv2.baby.domain.Healthy;
-import net.vv2.baby.service.impl.HealthyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
  * 返回
- * @author J.Sky bosichong@qq.com
+ * @author zhongfs zhongfengshan@yahoo.com
  * @create 2017-06-13 22:49
  **/
 @RestController

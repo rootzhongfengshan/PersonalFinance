@@ -102,12 +102,33 @@ ul {
   background: #fff;
 }
 
+.userview-content-report {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background: #dedede;
+}
+
 .userview-content,
 .userview-sidebar {
   height: 100%;
   overflow-x: scroll;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+}
+
+.userview-content-report,
+.userview-sidebar {
+    height: 100%;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 .userview-content-body {
@@ -119,7 +140,7 @@ ul {
 
 .userview-content-footer {
   font-size: 85%;
-  color: #777;
+    color: #fff;
 }
 
 .userview-content-list {

@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div class="am-form-group ">
-                            <label for="detail" class="am-u-sm-3 am-form-label">收款细节类别 / detail</label>
+                            <label for="detail" class="am-u-sm-3 am-form-label">收款描述 / detail</label>
                             <div class="am-u-sm-9 am-radio">
                                 <input type="text" id="detail" name="detail" placeholder="detail">
                             </div>
@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="am-form-group">
-                            <label for="rec_date" class="am-u-sm-2 am-form-label">rec_date</label>
+                            <label for="rec_date" class="am-u-sm-3 am-form-label">收款日期 / rec_date</label>
                             <div class="am-u-sm-9 am-radio">
                                 <input type="text" class="am-form-field" id="rec_date" placeholder="请选择日期" data-am-datepicker readonly required name="rec_date" />
 
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="am-form-group ">
-                            <label for="remarks" class="am-u-sm-3 am-form-label">remarks / remarks</label>
+                            <label for="remarks" class="am-u-sm-3 am-form-label">备注信息 / remarks</label>
                             <div class="am-u-sm-9 am-radio">
                                 <input type="text" id="remarks" name="remarks" placeholder="remarks">
                             </div>
@@ -152,7 +152,7 @@
                         </div>
 
                         <div class="am-form-group">
-                            <label for="beijingyouzheng" class="am-u-sm-3 am-form-label">beijingyouzheng</label>
+                            <label for="beijingyouzheng" class="am-u-sm-3 am-form-label" id="beijingyouzheng">beijingyouzheng</label>
                             <div class="am-u-sm-9 am-radio">
                                 <input type="text" id="beijingyouzheng	" name="beijingyouzheng" placeholder="beijingyouzheng">
 
@@ -223,29 +223,36 @@
                     </div>
 
                     <div class="am-form-group ">
-                        <label for="consume_type" class="am-u-sm-3 am-form-label">consume_type</label>
+                        <label for="consume_type" class="am-u-sm-3 am-form-label" id="consume_type">consume_type</label>
                         <div class="am-u-sm-9 am-radio">
                             <select name="consume_type">
-								<option th:value="${type.consume_type}"  th:each="type:${consumetypecategory}" th:text="${type.consume_type}">1</option>
+                                <option th:value="${type.consume_type}" th:each="type:${consumeTypeCategory}"
+                                        th:text="${type.consume_type}">1
+                                </option>
 							</select>
                             </div>    
                         
                     </div>
 
                     <div class="am-form-group ">
-                        <label for="consume_category" class="am-u-sm-3 am-form-label">consume_category</label>
+                        <label for="consume_category" class="am-u-sm-3 am-form-label" id="consume_category">consume_category</label>
                         <div class="am-u-sm-9 am-radio">
                             <select name="consume_category">
-								<option th:value="${category.consume_category}"  th:each="category:${consumetypecategory}" th:text="${category.consume_category}">1</option>
+                                <option th:value="${category.consume_category}"
+                                        th:each="category:${consumeTypeCategory}"
+                                        th:text="${category.consume_category}">1
+                                </option>
 							</select>
                             </div>    
                     </div>
 
                     <div class="am-form-group ">
-                        <label for="pay_way" class="am-u-sm-3 am-form-label">pay_way</label>
+                        <label for="pay_way" class="am-u-sm-3 am-form-label" id="pay_way">pay_way</label>
                         <div class="am-u-sm-9 am-radio">
                             <select name="pay_way">
-								<option th:value="${payway.payWay}"  th:each="payway:${payways}" th:text="${payway.payWay}">1</option>
+                                <option th:value="${payway.payWay}" th:each="payway:${payWays}"
+                                        th:text="${payway.payWay}">1
+                                </option>
 							</select>
                             </div>     
                     </div>
@@ -264,20 +271,14 @@
                 </form>
             </div>
         </div>
-
-
         </div>
     </div>
-        <div th:replace="layout/layout :: footer"></div>
+        <div th:replace="layout/userview :: footer"></div>
     </div>
-
-
 </div>
 
 
     <!-- home.js -->
-    <script th:src="@{/amazeui/assets/js/home.js}"></script>
-
 
 
 </body>

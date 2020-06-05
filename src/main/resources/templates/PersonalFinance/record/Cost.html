@@ -7,112 +7,111 @@
 <div class="am-cf userview-main">
     <div th:replace="layout/userview :: sidebar"></div>
     <div class="userview-content">
+        <div class="am-tabs am-g am-g-fixed am-animation-fade myfromtable" data-am-tabs>
+            <ul class="am-tabs-nav am-nav am-nav-tabs">
+                <li><a href="#tab1">消费金额录入</a></li>
+            </ul>
+            <div class="am-tabs-bd">
+                <div class="am-tab-panel am-fade" id="tab1">
+                    <div class="addfrom am-g am-g-fixed am-animation-fade">
+                        <form class="am-form am-form-horizontal" th:action="@{/PersonalFinance/record/saveCost}">
+
+                            <div class="am-form-group ">
+                                <label for="consume_date" class="am-u-sm-3 am-form-label">消费日期 / consumeDate</label>
+                                <div class="am-u-sm-9 am-radio">
+                                    <input type="text" class="am-form-field" id="consume_date" placeholder="请选择日期"
+                                           data-am-datepicker readonly required name="consume_date"/>
+                                </div>
+                            </div>
 
 
+                            <div class="am-form-group ">
+                                <label for="consume_name" class="am-u-sm-3 am-form-label">消费明细 / consumeName</label>
+                                <div class="am-u-sm-9 am-radio">
+                                    <input type="text" id="consume_name" name="consume_name" placeholder="consumeName">
+                                </div>
+                            </div>
 
-<div class="am-tabs am-g am-g-fixed am-animation-fade myfromtable" data-am-tabs>
-    <ul class="am-tabs-nav am-nav am-nav-tabs">
-        <li><a href="#tab1">消费金额录入</a></li>
-    </ul>
+                            <div class="am-form-group">
+                                <label for="project_fee" class="am-u-sm-3 am-form-label">消费金额 / projectFee</label>
+                                <div class="am-u-sm-9 am-radio">
+                                    <input type="text" id="project_fee" name="project_fee" placeholder="">
 
+                                </div>
+                            </div>
 
-    <div class="am-tabs-bd">
-        <div class="am-tab-panel am-fade" id="tab1">
-            <div class="addfrom am-g am-g-fixed am-animation-fade">
-                <form class="am-form am-form-horizontal" th:action="@{/PersonalFinance/record/saveCost}">
+                            <div class="am-form-group">
+                                <label for="consume_fee" class="am-u-sm-3 am-form-label">实际金额 / consumeFee</label>
+                                <div class="am-u-sm-9 am-radio">
+                                    <input type="text" id="consume_fee" name="consume_fee" placeholder="">
 
-                    <div class="am-form-group ">
-                        <label for="consume_date" class="am-u-sm-3 am-form-label">consume_date</label>
-                        <div class="am-u-sm-9 am-radio">
-                            <input type="text" class="am-form-field" id="consume_date" placeholder="请选择日期" data-am-datepicker readonly required name="consume_date" />
-                        </div>
+                                </div>
+                            </div>
+
+                            <div class="am-form-group ">
+                                <label for="consume_type" class="am-u-sm-3 am-form-label" id="consume_type">消费类别 /
+                                    consumeType</label>
+                                <div class="am-u-sm-9 am-radio">
+                                    <select name="consume_type">
+                                        <option th:value="${type.consume_type}" th:each="type:${consumeTypeCategory}"
+                                                th:text="${type.consume_type}">1
+                                        </option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="am-form-group ">
+                                <label for="consume_category" class="am-u-sm-3 am-form-label" id="consume_category">消费种别
+                                    / consumeCategory</label>
+                                <div class="am-u-sm-9 am-radio">
+                                    <select name="consume_category">
+                                        <option th:value="${category.consume_category}"
+                                                th:each="category:${consumeTypeCategory}"
+                                                th:text="${category.consume_category}">1
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="am-form-group ">
+                                <label for="pay_way" class="am-u-sm-3 am-form-label" id="pay_way">支付方式 / payWay</label>
+                                <div class="am-u-sm-9 am-radio">
+                                    <select name="pay_way">
+                                        <option th:value="${payway.payWay}" th:each="payway:${payWays}"
+                                                th:text="${payway.payWay}">1
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="am-form-group ">
+                                <label for="remarks" class="am-u-sm-3 am-form-label" id="remarks">备注信息 / remarks</label>
+                                <div class="am-u-sm-9 am-radio">
+                                    <input type="text" id="remarksInput" name="remarks" placeholder="remarks">
+                                </div>
+                            </div>
+
+                            <div class="am-form-group">
+                                <div class="am-u-sm-9 am-u-sm-push-3">
+                                    <button type="submit" class="am-btn am-btn-primary">提交记录</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-
-
-                    <div class="am-form-group ">
-                        <label for="consume_name" class="am-u-sm-3 am-form-label">consume_name</label>
-                        <div class="am-u-sm-9 am-radio">
-                            <input type="text" id="consume_name" name="consume_name" placeholder="consume_name">
-                        </div>
-                    </div>
-
-                    <div class="am-form-group">
-                        <label for="project_fee" class="am-u-sm-3 am-form-label">project_fee</label>
-                        <div class="am-u-sm-9 am-radio">
-                            <input type="text" id="project_fee" name="project_fee" placeholder="">
-
-                        </div>
-                    </div>
-
-                    <div class="am-form-group">
-                        <label for="consume_fee" class="am-u-sm-3 am-form-label">consume_fee</label>
-                        <div class="am-u-sm-9 am-radio">
-                            <input type="text" id="consume_fee" name="consume_fee" placeholder="">
-
-                        </div>
-                    </div>
-
-                    <div class="am-form-group ">
-                        <label for="consume_type" class="am-u-sm-3 am-form-label">consume_type</label>
-                        <div class="am-u-sm-9 am-radio">
-                            <select name="consume_type">
-								<option th:value="${type.consume_type}"  th:each="type:${consumetypecategory}" th:text="${type.consume_type}">1</option>
-							</select>
-                            </div>    
-                        
-                    </div>
-
-                    <div class="am-form-group ">
-                        <label for="consume_category" class="am-u-sm-3 am-form-label">consume_category</label>
-                        <div class="am-u-sm-9 am-radio">
-                            <select name="consume_category">
-								<option th:value="${category.consume_category}"  th:each="category:${consumetypecategory}" th:text="${category.consume_category}">1</option>
-							</select>
-                            </div>    
-                    </div>
-
-                    <div class="am-form-group ">
-                        <label for="pay_way" class="am-u-sm-3 am-form-label">pay_way</label>
-                        <div class="am-u-sm-9 am-radio">
-                            <select name="pay_way">
-								<option th:value="${payway.payWay}"  th:each="payway:${payways}" th:text="${payway.payWay}">1</option>
-							</select>
-                            </div>     
-                    </div>
-                    <div class="am-form-group ">
-                        <label for="remarks" class="am-u-sm-3 am-form-label">remarks</label>
-                        <div class="am-u-sm-9 am-radio">
-                            <input type="text" id="remarkss" name="remarks" placeholder="remarks">
-                        </div>
-                    </div>
-
-                    <div class="am-form-group">
-                        <div class="am-u-sm-9 am-u-sm-push-3">
-                            <button type="submit" class="am-btn am-btn-primary">提交记录</button>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
 
-
-</div>
-</div>
-        <div th:replace="layout/layout :: footer"></div>
+        <div th:replace="layout/userview :: footer"></div>
     </div>
-
-
 </div>
 
-    <!-- home.js -->
-    <script th:src="@{/amazeui/assets/js/home.js}"></script>
-    <div th:replace="layout/layout :: footer"></div>
 
 <script>
-$(function() {
-	var TodayDate = new Date();
-	  $('#consume_date').datepicker('setValue', TodayDate);
-	});
+    $(function () {
+        var TodayDate = new Date();
+        $('#consume_date').datepicker('setValue', TodayDate);
+    });
 </script>
 </body>
 </html>

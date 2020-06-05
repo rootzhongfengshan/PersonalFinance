@@ -5,7 +5,7 @@ import java.util.Date;
 
 /**
  * Weight
- * @author J.Sky bosichong@qq.com
+ * @author zhongfs zhongfengshan@yahoo.com
  * @create 2017-06-13 22:50
  **/
 

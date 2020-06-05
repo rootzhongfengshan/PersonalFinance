@@ -1,219 +1,397 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:fragment="htmlhead (title)">
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="format-detection" content="telephone=no">
-<meta name="renderer" content="webkit">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-<title th:text="${title}">Title</title>
+    <head th:fragment="htmlhead (title)">
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="Cache-Control" content="no-siteapp">
+        <title th:text="${title}">Title</title>
 
-<!-- amazeui -->
-<link th:href="@{/amazeui/assets/css/amazeui.min.css}" rel="stylesheet" />
-<link th:href="@{/asserts/css/userview.css}" rel="stylesheet" />
-<!-- 当前站点CSS样式文件 -->
-<link th:href="@{/amazeui/assets/css/app.css}" rel="stylesheet" />
-<script th:src="@{/amazeui/assets/js/echarts.min.js}"></script>
-<!-- jQuery -->
-<script th:src="@{/amazeui/assets/js/jquery.min.js}"></script>
-<!-- amazeui.js-->
-<script th:src="@{/amazeui/assets/js/amazeui.min.js}"></script>
-<!--  app后台.js -->
-<script th:src="@{/amazeui/assets/js/app.js}"></script>
-<link rel="alternate icon" type="image/png" th:href="@{/image/baby.png}">
-
-
-</head>
-
-<body>
+        <!-- amazeui -->
+        <link th:href="@{/amazeui/assets/css/amazeui.min.css}" rel="stylesheet"/>
+        <link th:href="@{/asserts/css/userview.css}" rel="stylesheet"/>
+        <!-- 当前站点CSS样式文件 -->
+        <link th:href="@{/amazeui/assets/css/app.css}" rel="stylesheet"/>
+        <script th:src="@{/amazeui/assets/js/echarts.min.js}"></script>
+        <!-- jQuery -->
+        <script th:src="@{/amazeui/assets/js/jquery.min.js}"></script>
+        <!-- amazeui.js-->
+        <script th:src="@{/amazeui/assets/js/amazeui.min.js}"></script>
+        <!--  app后台.js -->
+        <script th:src="@{/amazeui/assets/js/app.js}"></script>
+        <link rel="alternate icon" type="image/png" th:href="@{/image/wallpaper.png}">
 
 
-	<header class="am-topbar am-topbar-fixed-top" th:id="header"
-		th:fragment="header">
-		<div class="am-container">
-			<button
-				class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-secondary am-show-sm-only"
-				data-am-collapse="{target: '#collapse-head'}">
-				<span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span>
-			</button>
+    </head>
 
-			<div class="am-collapse am-topbar-collapse" id="collapse-head">
-				<ul class="am-nav am-nav-pills am-topbar-nav">
-					<!-- <li><a th:href="@{/baby/home/}">首页</a></li> -->
-					<li><a th:href="@{/PersonalFinance/index/}">首页</a></li>
-
-					<li class="am-dropdown" data-am-dropdown=""><a
-						class="am-dropdown-toggle" data-am-dropdown-toggle=""
-						href="javascript:;">
-							个人账务数据录入 <span class="am-icon-caret-down"></span>
-					</a>
-						<ul class="am-dropdown-content">
-
-							<li><a
-								th:href="@{/PersonalFinance/record/saveProperty_0_0_0}"
-								class="am-cf"><span class="am-icon-plus"></span>各账户资产情况统计</a></li>
-							<li><a th:href="@{/PersonalFinance/record/saveIncome_0_0_0}"
-								class="am-cf"><span class="am-icon-plus"></span>添加收款信息</a></li>
-							<li><a th:href="@{/PersonalFinance/record/saveCost_0_0_0}"
-								class="am-cf"><span class="am-icon-plus"></span>消费金额录入</a></li>
-							<li><a th:href="@{/PersonalFinance/importdata/recordcost}"
-								class="am-cf"><span class="am-icon-plus"></span>消费金额导入</a></li>
-						</ul></li>
+    <head th:fragment="htmlhead2 (title)">
 
 
-					<li class="am-dropdown" data-am-dropdown=""><a
-						class="am-dropdown-toggle" data-am-dropdown-toggle=""
-						href="javascript:;">
-							个人账务数据展示 <span class="am-icon-caret-down"></span></a>
-							<ul class="am-dropdown-content">
-								<li><a th:href="@{/PersonalFinance/showdata/showProperty}"
-									class="am-cf"><span class="am-icon-circle-o"></span></span>资产情况查询</a></li>
-								<li><a th:href="@{/PersonalFinance/showdata/showIncome}"><span
-										class="am-icon-circle-o"></span>收款信息查询</a></li>
-								<li><a th:href="@{/PersonalFinance/showdata/showCost}"><span
-										class="am-icon-circle-o"></span>消费金额查询</a></li>
-							</ul></li>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="Cache-Control" content="no-siteapp">
+        <title th:text="${title}">Title</title>
+
+        <!-- amazeui -->
+        <link th:href="@{/amazeui/assets/css/amazeui.min.css}" rel="stylesheet"/>
+        <link th:href="@{/asserts/css/userview.css}" rel="stylesheet"/>
+        <!-- 当前站点CSS样式文件 -->
+        <link th:href="@{/amazeui/assets/css/app.css}" rel="stylesheet"/>
+        <script th:src="@{/amazeui/assets/js/echarts.min.js}"></script>
+        <!-- jQuery -->
+        <script th:src="@{/amazeui/assets/js/jquery.min.js}"></script>
+        <!-- amazeui.js-->
+        <script th:src="@{/amazeui/assets/js/amazeui.min.js}"></script>
+        <!--  app后台.js -->
+        <script th:src="@{/amazeui/assets/js/app.js}"></script>
+        <link rel="alternate icon" type="image/png" th:href="@{/image/baby.png}">
+        <link rel="stylesheet" href="assets/css/core.css" th:href="@{/assets/css/core.css}"/>
+        <link rel="stylesheet" href="assets/css/menu.css" th:href="@{/assets/css/menu.css}"/>
+        <link rel="stylesheet" href="assets/css/index.css" th:href="@{/assets/css/index.css}"/>
+        <link rel="stylesheet" href="assets/css/admin.css" th:href="@{/assets/css/admin.css}"/>
+        <link rel="stylesheet" href="assets/css/page/typography.css" th:href="@{/assets/css/page/typography.css}"/>
+        <link rel="stylesheet" href="assets/css/page/form.css" th:href="@{/assets/css/page/form.css}"/>
+        <link rel="stylesheet" href="assets/css/component.css" th:href="@{/assets/css/component.css}"/>
+        <link rel="stylesheet" href="assets/css/thems.css" th:href="@{/assets/css/thems.css}"/>
+        <link rel="stylesheet" href="assets/css/reset.css" th:href="@{/assets/css/reset.css}"/>
+    </head>
 
 
-					<!-- <li><a th:href="@{/PersonalFinance/analyse/analyse/}">个人账务数据统计分析</a></li> -->
-
-					<li class="am-dropdown" data-am-dropdown=""><a
-						class="am-dropdown-toggle" data-am-dropdown-toggle=""
-						href="javascript:;" th:href="@{/PersonalFinance/index/}">
-							个人账务邮件发送 <span class="am-icon-caret-down"></span></a>
-
-							<ul class="am-dropdown-content">
-								<li><a
-									th:href="@{/PersonalFinance/sentemail/GotoSentMailWithCost}"><span
-										class="am-icon-mail-forward"></span>消费金额查询发送</a></li>
-								<li><a th:href="@{/admin/healthy/healthyList}"><span
-										class="am-icon-mail-forward"></span>消费金额查询</a></li>
-							</ul></li>
-
-					<!-- 判断权限，是否显示后台管理连接-->
-					<!-- <li th:if="${session.user.getGm() > 4}"><a
-						th:href="@{/admin/home}">后台管理</a></li> -->
+    <body>
 
 
-					<div class="am-topbar-right">
-						<a class="am-btn am-btn-success am-radius am-topbar-btn"
-							th:href="@{/logout}"><span class="am-icon-sign-out"></span>退出登陆</a>
-					</div>
-			</div>
-		</div>
-	</header>
+        <header class="am-topbar am-topbar-fixed-top" th:id="header"
+                th:fragment="header">
+            <div class="am-container">
+                <button
+                        class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-secondary am-show-sm-only"
+                        data-am-collapse="{target: '#collapse-head'}">
+                    <span class="am-sr-only">导航切换</span>
+                    <span class="am-icon-bars"></span>
+                </button>
+
+                <div class="am-collapse am-topbar-collapse" id="collapse-head">
+                    <ul class="am-nav am-nav-pills am-topbar-nav">
+                        <!-- <li><a th:href="@{/baby/home/}">首页</a></li> -->
+                        <li>
+                            <a th:href="@{/PersonalFinance/index/}">首页</a>
+                        </li>
+
+                        <li class="am-dropdown" data-am-dropdown="">
+                            <a
+                                    class="am-dropdown-toggle" data-am-dropdown-toggle=""
+                                    href="javascript:;">
+                                个人账务数据录入
+                                <span class="am-icon-caret-down"></span>
+                            </a>
+                            <ul class="am-dropdown-content">
+
+                                <li>
+                                    <a
+                                            th:href="@{/PersonalFinance/record/saveProperty_0_0_0}"
+                                            class="am-cf"><span class="am-icon-plus"></span>各账户资产情况统计
+                                    </a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/PersonalFinance/record/saveIncome_0_0_0}"
+                                       class="am-cf"><span class="am-icon-plus"></span>添加收款信息
+                                    </a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/PersonalFinance/record/saveCost_0_0_0}"
+                                       class="am-cf"><span class="am-icon-plus"></span>消费金额录入
+                                    </a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/PersonalFinance/importdata/recordcost}"
+                                       class="am-cf"><span class="am-icon-plus"></span>消费金额导入
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
 
+                        <li class="am-dropdown" data-am-dropdown="">
+                            <a
+                                    class="am-dropdown-toggle" data-am-dropdown-toggle=""
+                                    href="javascript:;">
+                                个人账务数据展示
+                                <span class="am-icon-caret-down"></span>
+                            </a>
+                            <ul class="am-dropdown-content">
+                                <li>
+                                    <a th:href="@{/PersonalFinance/showData/showProperty}"
+                                       class="am-cf">
+                                        <span class="am-icon-circle-o"></span>
+                                        </span>资产情况查询
+                                    </a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/PersonalFinance/showData/showIncome}"><span
+                                            class="am-icon-circle-o"></span>收款信息查询
+                                    </a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/PersonalFinance/showData/showCost}"><span
+                                            class="am-icon-circle-o"></span>消费金额查询
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
-	<sidebar class="userview-sidebar am-offcanvas" id="userview-offcanvas">
-	<div class="am-offcanvas-bar userview-offcanvas-bar">
+
+                        <!-- <li><a th:href="@{/PersonalFinance/analyse/analyse/}">个人账务数据统计分析</a></li> -->
+
+                        <li class="am-dropdown" data-am-dropdown="">
+                            <a
+                                    class="am-dropdown-toggle" data-am-dropdown-toggle=""
+                                    href="javascript:;" th:href="@{/PersonalFinance/index/}">
+                                个人账务邮件发送
+                                <span class="am-icon-caret-down"></span>
+                            </a>
+
+                            <ul class="am-dropdown-content">
+                                <li>
+                                    <a
+                                            th:href="@{/PersonalFinance/sentemail/GotoSentMailWithCost}"><span
+                                            class="am-icon-mail-forward"></span>消费金额查询发送
+                                    </a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/admin/healthy/healthyList}"><span
+                                            class="am-icon-mail-forward"></span>消费金额查询
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- 判断权限，是否显示后台管理连接-->
+                        <!-- <li th:if="${session.user.getGm() > 4}"><a
+                            th:href="@{/admin/home}">后台管理</a></li> -->
 
 
+                        <div class="am-topbar-right">
+                            <a class="am-btn am-btn-success am-radius am-topbar-btn"
+                               th:href="@{/logout}"><span class="am-icon-sign-out"></span>退出登陆
+                            </a>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </header>
 
-		<ul class="am-list userview-sidebar-list">
 
-			<li class="userview-parent"><a
-				th:href="@{/PersonalFinance/index/}" class="am-cf"
-				data-am-collapse="{target: '#user-nav'}"><span
-					class="am-icon-bars"></span>个人账务数据录入<span
-					class="am-icon-angle-right am-fr am-margin-right"></span></a>
-				<ul class="am-list am-collapse userview-sidebar-sub am-in"
-					id="user-nav">
-					<li><a th:href="@{/PersonalFinance/record/saveProperty_0_0_0}"
-						class="am-cf"><span class="am-icon-plus"></span>各账户资产情况统计</a></li>
-					<li><a th:href="@{/PersonalFinance/record/saveIncome_0_0_0}"
-						class="am-cf"><span class="am-icon-plus"></span>添加收款信息</a></li>
-					<li><a th:href="@{/PersonalFinance/record/saveCost_0_0_0}"
-						class="am-cf"><span class="am-icon-plus"></span>消费金额录入</a></li>
-					<li><a th:href="@{/PersonalFinance/importdata/recordcost}"
-						class="am-cf"><span class="am-icon-plus"></span>消费金额导入</a></li>
-				</ul></li>
+        <sidebar class="userview-sidebar am-offcanvas" id="userview-offcanvas">
+            <div class="am-offcanvas-bar userview-offcanvas-bar">
 
-			<li class="userview-parent"><a class="am-cf"
-				data-am-collapse="{target: '#baby-nav'}"><span
-					class="am-icon-bars"></span>个人账务数据展示<span
-					class="am-icon-angle-right am-fr am-margin-right"></span></a>
-				<ul class="am-list am-collapse userview-sidebar-sub am-in"
-					id="baby-nav">
-					<li><a th:href="@{/PersonalFinance/showdata/showProperty}"
-						class="am-cf"><span class="am-icon-circle-o"></span></span>资产情况查询</a></li>
-					<li><a th:href="@{/PersonalFinance/showdata/showIncome}"><span
-							class="am-icon-circle-o"></span>收款信息查询</a></li>
-					<li><a th:href="@{/PersonalFinance/showdata/showCost}"><span
-							class="am-icon-circle-o"></span>消费金额查询</a></li>
-				</ul></li>
 
-			<li class="userview-parent"><a
-				th:href="@{/PersonalFinance/analyse/analyse}" class="am-cf"
-				data-am-collapse="{target: '#blog-nav'}"><span
-					class="am-icon-bars"></span>个人账务数据统计分析<span
-					class="am-icon-angle-right am-fr am-margin-right"></span></a>
-				<ul class="am-list am-collapse userview-sidebar-sub am-in"
-					id="data-nav">
+                <ul class="am-list userview-sidebar-list">
 
-                    <li>
-                        <a th:href="@{/PersonalFinance/report/index}"><span
-                                class="am-icon-line-chart"></span>总体情况
+                    <li class="userview-parent">
+                        <a
+                                th:href="@{/PersonalFinance/index/}" class="am-cf"
+                                data-am-collapse="{target: '#user-nav'}"><span
+                                class="am-icon-bars"></span>个人账务数据录入
+                            <span
+                                    class="am-icon-angle-right am-fr am-margin-right"></span>
                         </a>
+                        <ul class="am-list am-collapse userview-sidebar-sub am-in"
+                            id="user-nav">
+                            <li>
+                                <a th:href="@{/PersonalFinance/record/saveProperty_0_0_0}"
+                                   class="am-cf"><span class="am-icon-plus"></span>各账户资产情况统计
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{/PersonalFinance/record/saveIncome_0_0_0}"
+                                   class="am-cf"><span class="am-icon-plus"></span>添加收款信息
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{/PersonalFinance/record/saveCost_0_0_0}"
+                                   class="am-cf"><span class="am-icon-plus"></span>消费金额录入
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{/PersonalFinance/importdata/recordcost}"
+                                   class="am-cf"><span class="am-icon-plus"></span>消费金额导入
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-					<li><a th:href="@{/admin/healthy/healthyList}"><span
-                            class="am-icon-line-chart"></span>个人财务细则报告
-                    </a>
+
+                    <li class="userview-parent">
+                        <a class="am-cf"
+                           data-am-collapse="{target: '#baby-nav'}"><span
+                                class="am-icon-bars"></span>个人账务数据展示
+                            <span
+                                    class="am-icon-angle-right am-fr am-margin-right"></span>
+                        </a>
+                        <ul class="am-list am-collapse userview-sidebar-sub am-in"
+                            id="baby-nav">
+                            <li>
+                                <a th:href="@{/PersonalFinance/showData/showProperty}"
+                                   class="am-cf">
+                                    <span class="am-icon-circle-o"></span>
+                                    </span>资产情况查询
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{/PersonalFinance/showData/showIncome}"><span
+                                        class="am-icon-circle-o"></span>收款信息查询
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{/PersonalFinance/showData/showCost}"><span
+                                        class="am-icon-circle-o"></span>消费金额查询
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-				</ul></li>
 
-			<li class="userview-parent"><a
-				th:href="@{/PersonalFinance/sentemail/}" class="am-cf"
-				data-am-collapse="{target: '#blog-nav'}"><span
-					class="am-icon-bars"></span>个人账务邮件发送<span
-					class="am-icon-angle-right am-fr am-margin-right"></span></a>
-				<ul class="am-list am-collapse userview-sidebar-sub am-in"
-					id="sent-nav">
+                    <li class="userview-parent">
+                        <a class="am-cf"
+                           data-am-collapse="{target: '#baby-nav'}"><span
+                                class="am-icon-bars"></span>个人预算管理
+                            <span
+                                    class="am-icon-angle-right am-fr am-margin-right"></span>
+                        </a>
+                        <ul class="am-list am-collapse userview-sidebar-sub am-in"
+                            id="budget-nav">
+                            <li>
+                                <a th:href="@{/PersonalFinance/budget/recordBudget}"><span
+                                        class="am-icon-circle-o"></span>个人预算录入
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{/PersonalFinance/budget/showBudget}"
+                                   class="am-cf">
+                                    <span class="am-icon-circle-o"></span>
+                                    </span>个人预算查询
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{/PersonalFinance/budget/budgetAnalyse}"><span
+                                        class="am-icon-line-chart"></span>预算与实际使用情况
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
-					<li><a
-						th:href="@{/PersonalFinance/sentemail/GotoSentMailWithCost}"><span
-							class="am-icon-mail-forward"></span>消费金额查询发送</a></li>
-					<li><a th:href="@{/admin/healthy/healthyList}"><span
-							class="am-icon-mail-forward"></span>消费金额查询</a></li>
-				</ul></li>
-				
-				<li class="userview-parent"><a
-				th:href="@{/PersonalFinance/sentemail/}" class="am-cf"
-				data-am-collapse="{target: '#blog-nav'}"><span
-					class="am-icon-bars"></span>个人体重管理<span
-					class="am-icon-angle-right am-fr am-margin-right"></span></a>
-				<ul class="am-list am-collapse userview-sidebar-sub am-in"
-					id="sent-nav">
+                    <li class="userview-parent">
+                        <a
+                                th:href="@{/PersonalFinance/analyse/analyse}" class="am-cf"
+                                data-am-collapse="{target: '#blog-nav'}"><span
+                                class="am-icon-bars"></span>个人账务数据统计分析
+                            <span
+                                    class="am-icon-angle-right am-fr am-margin-right"></span>
+                        </a>
+                        <ul class="am-list am-collapse userview-sidebar-sub am-in"
+                            id="data-nav">
 
-					<li><a
-						th:href="@{/HealthyManager/index}"><span
-							class="am-icon-mail-forward"></span>个人体重折线图</a></li>
-					<li><a th:href="@{/HealthyManager/record.html}"><span
-							class="am-icon-mail-forward"></span>个人体重数据记录</a></li>
-				</ul></li>
+                            <li>
+                                <a th:href="@{/PersonalFinance/report/index}"><span
+                                        class="am-icon-line-chart"></span>当月财务总体情况
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{/PersonalFinance/analyse/incomePie}"><span
+                                        class="am-icon-line-chart"></span>每月数据饼图
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{/PersonalFinance/analyse/analyseCostByTypeIndex}"><span
+                                        class="am-icon-line-chart"></span>消费数据统计-按类别
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{/PersonalFinance/report/analyseCostInThePastSixMonths}"><span
+                                        class="am-icon-line-chart"></span>近半年消费数据堆叠图
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{/admin/healthy/healthyList}"><span
+                                        class="am-icon-line-chart"></span>个人财务细则报告
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{/admin/healthy/healthyList}"><span
+                                        class="am-icon-line-chart"></span>个人财务细则报告
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
-		</ul>
+                    <li class="userview-parent">
+                        <a
+                                th:href="@{/PersonalFinance/sentemail/}" class="am-cf"
+                                data-am-collapse="{target: '#blog-nav'}"><span
+                                class="am-icon-bars"></span>个人账务邮件发送
+                            <span
+                                    class="am-icon-angle-right am-fr am-margin-right"></span>
+                        </a>
+                        <ul class="am-list am-collapse userview-sidebar-sub am-in"
+                            id="sent-nav1">
+
+                            <li>
+                                <a
+                                        th:href="@{/PersonalFinance/sentemail/GotoSentMailWithCost}"><span
+                                        class="am-icon-mail-forward"></span>消费金额查询发送
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{/PersonalFinance/sentemail/GotoSentMailWithEchars}"><span
+                                        class="am-icon-mail-forward"></span>消费金额查询
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="userview-parent">
+                        <a
+                                th:href="@{/PersonalFinance/sentemail/}" class="am-cf"
+                                data-am-collapse="{target: '#blog-nav'}"><span
+                                class="am-icon-bars"></span>个人体重管理
+                            <span
+                                    class="am-icon-angle-right am-fr am-margin-right"></span>
+                        </a>
+                        <ul class="am-list am-collapse userview-sidebar-sub am-in"
+                            id="sent-nav">
+
+                            <li>
+                                <a
+                                        th:href="@{/HealthyManager/index}"><span
+                                        class="am-icon-mail-forward"></span>个人体重折线图
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{/HealthyManager/record.html}"><span
+                                        class="am-icon-mail-forward"></span>个人体重数据记录
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
 
 
+            </div>
+        </sidebar>
 
 
-
-	</div>
-	</sidebar>
-
-
-	<footer class="footer am-g" th:fragment="footer" th:id="footer">
-		<hr />
-		<p class="text-center">
-			<span style="color: #0bb59b;">任凭时光匆匆，</span><span>记录点点滴滴。</span>
-		</p>
-		<p class="text-center" style="color: #333;">Version:1.0.0 By
-			Fengger on 2019-05-22</p>
+        <footer class="footer am-g am-g-fixed" th:fragment="footer" th:id="footer">
+            <p class="text-center">
+                <span style="color:#0bb59b;">记账，就是记录财富，记录点点滴滴。</span>
+            </p>
+            <p class="text-center" style="color:#333;">Version:1.0.0 By 子敬独立科技有限公司 2018-10-26</p>
+        </footer>
 
 
-
-	</footer>
-
-</body>
+    </body>
 </html>

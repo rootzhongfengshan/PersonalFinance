@@ -24,8 +24,8 @@
 					<tr>
 						<th>months</th>
 						<th>details</th>
-						<th>recamount</th>
-						<th>recdate</th>
+                        <th>recAmount</th>
+                        <th>recDate</th>
 						<!-- <th>remarks</th> -->
 					</tr>
 				</thead>
@@ -34,7 +34,7 @@
 						<td th:text="${Income.months}"></td>
 						<td th:text="${Income.detail}"></td>
 						<td th:text="${Income.rec_amount}"></td>
-						<td th:text="${Income.rec_datesw}"></td>
+                        <td th:text="${#dates.format(Income.rec_date, 'yyyy-MM-dd')}"></td>
 						<!-- 	<td th:text="${Income.remarks}"></td> -->
 					</tr>
 				</tbody>
@@ -53,25 +53,25 @@
 				border="1" cellspacing="0" style="text-align:center;border-collapse:collapse;">
 				<thead>
 					<tr>
-						<th>consumedate</th>
-						<th>consumename</th>
+                        <th>consumeDate</th>
+                        <th>consumeName</th>
 						<!-- <th>project_fee</th> -->
-						<th>consumefee</th>
-						<th>consumetype</th>
-						<th>consumecategory</th>
+                        <th>consumeFee</th>
+                        <th>consumeType</th>
+                        <th>consumeCategory</th>
 						<th>payway</th>
 						<!-- <th>remarks</th> -->
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="Cost : ${costlist}">
-						<td th:text="${Cost.consume_datesw}"></td>
+                        <td th:text="${#dates.format(Cost.consume_date, 'yyyy-MM-dd')}"></td>
 						<td th:text="${Cost.consume_name}"></td>
 						<!-- <td th:text="${Cost.project_fee}"></td> -->
 						<td th:text="${Cost.consume_fee}"></td>
-						<!-- <td th:text="${Cost.consume_type}"></td> -->
+                        <td th:text="${Cost.consume_type}"></td>
 						<td th:text="${Cost.consume_category}"></td>
-						<td style="empty-cells:show;" th:text="${Cost.pay_way}"></td>
+                        <td th:text="${Cost.pay_way}"></td>
 						<!-- <td th:text="${Cost.remarks}"></td> -->
 					</tr>
 				</tbody>
@@ -96,8 +96,8 @@
 				border="1" cellspacing="0" style="text-align:center">
 				<tbody th:each="Property : ${endpropertylist}">
 					<tr>
-						<th>recorddate</th>
-						<td th:text="${Property.record_datesw}"></td>
+                        <th>recordDate</th>
+                        <td th:text="${#dates.format(Property.record_date, 'yyyy-MM-dd')}"></td>
 					</tr>
 					<tr>
 						<th>wechat1</th>
