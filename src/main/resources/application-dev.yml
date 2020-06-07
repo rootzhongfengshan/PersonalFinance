@@ -65,10 +65,15 @@ server:
 #开MYBATIS日志打印 修改level及包名级别为debug 设置日志保存目录
 logging:
   level:
-    net.vv2.baby.mapper: DEBUG
-    net.vv2.PersonalFinance.mapper: DEBUG
+    root: info
+    net.vv2: DEBUG
     org.apache.ibatis: DEBUG
+    org.springframework:  info
+    org.mybatis.spring: info
   file: var/log/myapp.log
+
+
+
 
 
   ###############################################
@@ -87,3 +92,7 @@ logging:
 #    profiles: prod  #指定属于哪个环境
 upload:
   quotaFile: /home/damuser/dam/quota/excel/
+
+
+mybatis:
+  mapperLocations: classpath:mybatis/mapper/*Mapper.xml

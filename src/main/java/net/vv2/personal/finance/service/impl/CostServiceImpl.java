@@ -68,4 +68,9 @@ public class CostServiceImpl implements CostService {
     public List<Map<String, String>> queryCostListByDateGroupByConsumeCategory(String start_date, String end_date) {
         return costMapper.queryCostListByDateGroupByConsumeCategory(start_date, end_date);
     }
+
+    @Override
+    public List<Map<String, String>> selectCostValueByBudgetName(List<String> budgetNameList, String start_date, String end_date) {
+        return costMapper.selectCostValueByBudgetName(budgetNameList, start_date, end_date);
+    }
 }

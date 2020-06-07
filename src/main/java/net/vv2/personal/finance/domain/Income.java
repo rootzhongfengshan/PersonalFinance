@@ -1,10 +1,12 @@
 package net.vv2.personal.finance.domain;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
 /**
  * Healthy
+ *
  * @author zhongfs zhongfengshan@yahoo.com
  * @create 2017-06-13 22:50
  **/
@@ -108,7 +110,7 @@ public class Income {
         this.remarks = remarks;
     }
 
-	@Override
+    @Override
     public String toString() {
         return "Income{" +
                 "id=" + id +

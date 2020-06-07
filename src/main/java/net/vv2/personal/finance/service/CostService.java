@@ -61,4 +61,6 @@ public interface CostService {
     List<Map<String, String>> queryCostListByDateGroupByConsumeType(String start_date, String end_date);
 
     List<Map<String, String>> queryCostListByDateGroupByConsumeCategory(String start_date, String end_date);
+
+    List<Map<String, String>> selectCostValueByBudgetName(List<String> budgetNameList, String start_date, String end_date);
 }

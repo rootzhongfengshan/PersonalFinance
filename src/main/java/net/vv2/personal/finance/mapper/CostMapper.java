@@ -120,4 +120,6 @@ public interface CostMapper {
             @Result(column = "remarks", property = "remarks")
     })
     List<Map<String, Object>> selectCostByDateReturnMap(@Param("start_date") String start_date, @Param("end_date") String end_date);
+
+    List<Map<String, String>> selectCostValueByBudgetName(@Param("budgetNameList") List<String> budgetNameList, @Param("start_date") String start_date, @Param("end_date") String end_date);
 }

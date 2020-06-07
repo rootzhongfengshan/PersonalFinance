@@ -128,10 +128,8 @@ public class SentEmaiController {
 		mailService.sendAttachmentsMail("zhongfengshan@qq.com", title, title, filename);
 		
 		mailService.sendAttachmentsMail("zhongfengshan@qq.com", title, title, htmlFileName);
-		
-		List<String> datelists=propertyService.selectAllOrderByRecordDate();
-		model.addAttribute("datelists",datelists);
-        return "PersonalFinance/sentemail/SentMailWithCost";
+
+        return "redirect:/PersonalFinance/sentemail/GotoSentMailWithCost";
 	}
 
     @RequestMapping("sentmailwithcostmessage2")

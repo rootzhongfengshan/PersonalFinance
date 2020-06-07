@@ -1,6 +1,7 @@
 package net.vv2.personal.finance.web.controller;
 
 import net.vv2.personal.finance.domain.Cost;
+import net.vv2.personal.finance.domain.Income;
 import net.vv2.personal.finance.service.IncomeService;
 import net.vv2.personal.finance.service.impl.CostServiceImpl;
 import net.vv2.personal.finance.service.impl.PropertyServiceImpl;
@@ -161,12 +162,13 @@ public class AnalyseController {
     public String incomePie(String start_date, String end_date, Model model) {
         start_date = HandleDateTools.dealWithStartDate(start_date);
         end_date = HandleDateTools.dealWithEndDate(end_date);
-        List<Map<String, String>> seriesDataList = incomeService.selectIncomeByDateGroupByDetail(start_date, end_date);
-        List<String> legendDataList = seriesDataList.stream().map(s -> s.get("name")).collect(Collectors.toList());
-        //Map<String,String> seriesDataMap=incomeList.stream().collect(Collectors.toMap(s->s.getDetail(),s->s.getRec_amount()));
-        //List<String> legendDataList=new ArrayList<>(seriesDataMap.keySet());
+        //List<Map<String, String>> seriesDataList = incomeService.selectIncomeByDateGroupByDetail(start_date, end_date);
+        List<Income> incomeList = incomeService.selectIncomeByDate(start_date, end_date);
+        //List<String> legendDataList = seriesDataList.stream().map(s -> s.get("name")).collect(Collectors.toList());
+        Map<String, String> seriesDataMap = incomeList.stream().collect(Collectors.toMap(s -> s.getDetail(), s -> s.getRec_amount()));
+        List<String> legendDataList = new ArrayList<>(seriesDataMap.keySet());
         //List<String> legendDataList=new ArrayList<>(Arrays.asList("aa", "bb", "cc", "dd"));
-/*        List<Map<String,String>> seriesDataList=new ArrayList<>();
+        List<Map<String, String>> seriesDataList = new ArrayList<>();
         for (Map.Entry<String,String> entity:seriesDataMap.entrySet()){
             Map<String,String> map=new HashMap<>(10);
             String key=entity.getKey();
@@ -174,7 +176,8 @@ public class AnalyseController {
             map.put("name",key);
             map.put("value",value);
             seriesDataList.add(map);
-        }*/
+        }
+        model.addAttribute("incomeList", incomeList);
         model.addAttribute("legendDataList", legendDataList);
         model.addAttribute("seriesDataList", seriesDataList);
         model.addAttribute("start_date", start_date);
