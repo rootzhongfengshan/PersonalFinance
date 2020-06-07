@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="layout/userview :: htmlhead2(title='个人财务管理系统首页eerrr')"></head>
+<body>
+<div th:replace="layout/userview :: header"></div>
+<div class="am-cf userview-main">
+    <div th:replace="layout/userview :: sidebar"></div>
+    <div class="userview-content-report">
+        <div class="content">
+            <div class="am-g">
+                <div class="am-u-md-12">
+                    <div class="card-box">
+                        <form action="" th:action="@{/PersonalFinance/budget/showBudget}" method="post">
+                            <ul class="hypz gjpz clearfix">
+                                <li class="clearfix">
+                                    <span class="title">记录日期：</span>
+                                    <div class="li_r">
+                                        <input type="text" class="am-form-field" id="record_date" placeholder="请选择日期"
+                                               data-am-datepicker readonly required name="record_date"
+                                               th:value="${record_date}"/>
+                                    </div>
+                                </li>
+                                <li class="tj_btn">
+                                    <button type="submit">查询</button>
+                                    <a href="/PersonalFinance/exportData/exportIncomeList">编辑</a>
+                                </li>
+                            </ul>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="am-g">
+                <div class="am-u-md-12">
+                    <div class="card-box">
+                        <div class="xjhy">
+                            <!--高级配置-->
+                            <ul class="hypz gjpz clearfix" th:if="${budgetList!=null}">
+                                <li class="clearfix" th:each="budget : ${budgetList}">
+                                    <span class="title" th:text="${budget.budgetName}"></span>
+                                    <div class="li_r">
+                                        <input type="text" th:name="${budget.budgetName}" placeholder=""
+                                               th:value="${budget.budgetValue}">
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row end -->
+            </div>
+
+        </div>
+        <!-- end right Content here -->
+        <!--</div>-->
+    </div>
+</div>
+<script type="text/javascript" src="assets/js/jquery-2.1.0.js" th:src="@{/assets/js/jquery-2.1.0.js}"></script>
+<script type="text/javascript" src="assets/js/amazeui.min.js" th:src="@{/assets/js/amazeui.min.js}"></script>
+
+<script type="text/javascript" src="assets/js/blockUI.js" th:src="@{/assets/js/blockUI.js}"></script>
+<script type="text/javascript" src="assets/js/charts/echarts.min.js"
+        th:src="@{/assets/js/charts/echarts.min.js}"></script>
+</body>
+
+
+<script type="text/javascript" th:inline="javascript">
+    $(function () {
+        var TodayDate = new Date();
+        $('#record_date').datepicker('setValue', TodayDate);
+    });
+</script>
+
+
+</html>

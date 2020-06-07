@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="layout/userview :: htmlhead(title='个人财务管理系统首页')"></head>
+<body class="am-with-topbar-fixed-top am-scrollable-vertical">
+<div th:replace="layout/userview :: header"></div>
+
+<div class="am-cf userview-main">
+    <div th:replace="layout/userview :: sidebar"></div>
+    <div class="userview-content">
+
+        <div class="userview-content-body">
+            <div class="am-cf am-padding am-padding-bottom-0">
+                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">账户余额信息查询</strong></div>
+            </div>
+            <hr>
+
+            <div class="am-g">
+                <div class="am-u-sm-12">
+                    <table class="am-table am-table-bd am-table-striped userview-content-table" border="1"
+                           cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>record_date</th>
+                            <th>wechat1</th>
+                            <th>wechat2</th>
+                            <th>alipay1</th>
+                            <th>alipay2</th>
+                            <th>zhaoshang</th>
+                            <th>jiaotong</th>
+                            <th>jianshe</th>
+                            <th>beijing</th>
+                            <th>maomingyouzheng</th>
+                            <th>beijingyouzheng</th>
+                            <th>gongshang</th>
+                            <th>all_sum</th>
+                            <th>remarks</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="Property : ${list}">
+                            <td th:text="${#calendars.format(Property.record_date,'yyyy-MM-dd')}"></td>
+                            <td th:text="${Property.wechat1}"></td>
+                            <td th:text="${Property.wechat2}"></td>
+                            <td th:text="${Property.alipay1}"></td>
+                            <td th:text="${Property.alipay2}"></td>
+                            <td th:text="${Property.zhaoshang}"></td>
+                            <td th:text="${Property.jiaotong}"></td>
+                            <td th:text="${Property.jianshe}"></td>
+                            <td th:text="${Property.beijing}"></td>
+                            <td th:text="${Property.maomingyouzheng}"></td>
+                            <td th:text="${Property.beijingyouzheng}"></td>
+                            <td th:text="${Property.gongshang}"></td>
+                            <td th:text="${Property.all_sum}"></td>
+                            <td th:text="${Property.remarks}"></td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- footer-->
+        <div th:replace="layout/userview :: footer"></div>
+    </div>
+
+
+</div>
+<!-- content end -->
+
+
+</body>
+</html>

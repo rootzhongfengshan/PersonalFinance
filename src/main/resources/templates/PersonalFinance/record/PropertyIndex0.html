@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="layout/userview :: htmlhead2(title='个人财务管理系统首页eerrr')"></head>
+<body>
+<div th:replace="layout/userview :: header"></div>
+<div class="am-cf userview-main">
+    <div th:replace="layout/userview :: sidebar"></div>
+    <div class="userview-content">
+        <div class="am-cf am-padding am-padding-bottom-0">
+            <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">账户余额信息查询</strong></div>
+        </div>
+        <div class="content">
+            <form action="" th:action="@{/PersonalFinance/record/saveProperty}" method="post">
+                <div class="xjhy">
+                    <!--高级配置-->
+                    <ul class="hypz gjpz clearfix">
+
+                        <li class="clearfix">
+                            <span class="title">记录日期：</span>
+                            <div class="li_r">
+                                <input type="text" class="am-form-field" id="record_date" placeholder="请选择日期"
+                                       data-am-datepicker readonly required name="record_date"/>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <span class="title">微信账户1：</span>
+                            <div class="li_r">
+                                <input type="text" id="wechat1" name="wechat1" placeholder="">
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <span class="title">微信账户1：</span>
+                            <div class="li_r">
+                                <input type="text" id="wechat2" name="wechat2" placeholder="">
+                            </div>
+                        </li>
+
+                        <li class="clearfix">
+                            <span class="title">支付宝账户1: </span>
+                            <div class="li_r">
+                                <input type="text" id="alipay1" name="alipay1" placeholder="">
+                            </div>
+                        </li>
+
+                        <li class="clearfix">
+                            <span class="title">支付宝账户2: </span>
+                            <div class="li_r">
+                                <input type="text" id="alipay2" name="alipay2" placeholder="">
+                            </div>
+                        </li>
+
+
+                        <li class="clearfix">
+                            <span class="title">招商银行: </span>
+                            <div class="li_r">
+                                <input type="text" id="zhaoshang" name="zhaoshang" placeholder="">
+                            </div>
+                        </li>
+
+                        <li class="clearfix">
+                            <span class="title">交通银行: </span>
+                            <div class="li_r">
+                                <input type="text" id="jiaotong" name="jiaotong" placeholder="">
+                            </div>
+                        </li>
+
+                        <li class="clearfix">
+                            <span class="title">建设银行: </span>
+                            <div class="li_r">
+                                <input type="text" id="jianshe" name="jianshe" placeholder="">
+                            </div>
+                        </li>
+
+                        <li class="clearfix">
+                            <span class="title">北京银行: </span>
+                            <div class="li_r">
+                                <input type="text" id="beijing" name="beijing" placeholder="">
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <span class="title">茂名邮政: </span>
+                            <div class="li_r">
+                                <input type="text" id="maomingyouzheng" name="maomingyouzheng" placeholder="">
+                            </div>
+                        </li>
+
+                        <li class="clearfix">
+                            <span class="title">北京邮政: </span>
+                            <div class="li_r">
+                                <input type="text" id="beijingyouzheng	" name="beijingyouzheng" placeholder="">
+                            </div>
+                        </li>
+
+
+                        <li class="clearfix">
+                            <span class="title">工商银行: </span>
+                            <div class="li_r">
+                                <input type="text" id="gongshang" name="gongshang" placeholder="">
+                            </div>
+                        </li>
+
+
+                        <li class="clearfix">
+                            <span class="title">备注: </span>
+                            <div class="li_r">
+                                <input type="text" id="remarksss" name="remarks" placeholder="">
+                            </div>
+                        </li>
+                        <li class="tj_btn">
+                            <button type="submit">提交记录</button>
+                        </li>
+                    </ul>
+                    <!--高级配置-->
+                </div>
+            </form>
+        </div>
+
+        <div th:replace="layout/userview :: footer"></div>
+
+    </div>
+</div>
+
+<script>
+    $(function () {
+        var TodayDate = new Date();
+        $('#record_date').datepicker('setValue', TodayDate);
+    });
+</script>
+
+</body>
+</html>

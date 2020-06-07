@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.vv2.personal.finance.mapper.CostMapper">
+
+    <select id="selectCostValueByBudgetName" resultType="java.util.Map">
+        select consume_category,cast(sum(consume_fee) AS CHAR) consume_fee from t_detailed_cost_record
+        <where>
+            consume_date between #{start_date} and #{end_date}
+            <if test="budgetNameList !=null and budgetNameList.isEmpty()!=true">
+                and consume_category in
+                <foreach item="budgetName" index="index" collection="budgetNameList"
+                         open="(" separator="," close=")">
+                    #{budgetName}
+                </foreach>
+            </if>
+        </where>
+        group by consume_category
+    </select>
+</mapper>
